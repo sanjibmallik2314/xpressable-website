@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XpressAble — Every Voice can take Flight</title>
+  <meta name="description" content="XpressAble is an AI-powered communication assistant that helps children find their words naturally and confidently." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F5F8FF;
+      color: #1A1A1A;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: #FFFFFF;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A237E;
+    }
+    .nav-logo span { color: #2E9E6B; }
+    .nav-cta {
+      background: #2E74B5;
+      color: #FFFFFF;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #1A5A9A; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #E8F4FE;
+      color: #2E74B5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #1A237E;
+    }
+    .hero h1 span { color: #2E9E6B; }
+    .hero-tagline {
+      font-size: 20px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+    .hero-description {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #2E74B5;
+      color: #FFFFFF;
+      padding: 16px 36px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { background: #1A5A9A; transform: translateY(-1px); }
+    .btn-secondary {
+      background: #FFFFFF;
+      color: #2E74B5;
+      padding: 16px 36px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid #2E74B5;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: #F0F7FF; }
+
+    /* APP PREVIEW */
+    .preview {
+      background: #FFFFFF;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .preview-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .phone-mockup {
+      width: 260px;
+      height: 520px;
+      background: #1A1A1A;
+      border-radius: 40px;
+      margin: 0 auto 40px;
+      padding: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    .phone-screen {
+      background: #F5F8FF;
+      border-radius: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      gap: 16px;
+    }
+    .phone-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1A237E;
+    }
+    .phone-title span { color: #2E9E6B; }
+    .phone-tagline {
+      font-size: 10px;
+      color: #888;
+      font-style: italic;
+    }
+    .phone-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .phone-pill {
+      background: #FFFFFF;
+      border: 1.5px solid #2E74B5;
+      color: #2E74B5;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 9999px;
+    }
+    .phone-button {
+      width: 130px;
+      height: 130px;
+      border-radius: 65px;
+      background: #2E74B5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .phone-box {
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 9px;
+      color: #666;
+    }
+    .phone-box-label {
+      font-size: 8px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .phone-bottom {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+    .phone-bottom-btn {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1.5px solid #2E74B5;
+      border-radius: 8px;
+      padding: 6px;
+      font-size: 9px;
+      color: #2E74B5;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 70px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* HOW IT WORKS */
+    .how {
+      background: #FFFFFF;
+      padding: 70px 24px;
+    }
+    .how-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      background: #2E74B5;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* BETA */
+    .beta {
+      padding: 70px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #1A237E 0%, #2E74B5 100%);
+      color: #FFFFFF;
+    }
+    .beta h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .beta p {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .beta-steps {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .beta-step {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .beta-step span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    .btn-white {
+      background: #FFFFFF;
+      color: #2E74B5;
+      padding: 16px 40px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      display: inline-block;
+      transition: transform 0.1s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: #1A1A1A;
+      color: #999;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+    }
+    footer a { color: #2E74B5; text-decoration: none; }
+    footer .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    footer .footer-logo span { color: #2E9E6B; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 36px; }
+      nav { padding: 14px 20px; }
+      .beta h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Xpress<span>Able</span></div>
+    <a href="https://testflight.apple.com/join/SKpZQD96" class="nav-cta" target="_blank">Join Beta</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">NOW IN BETA</div>
+    <h1>Xpress<span>Able</span></h1>
+    <p class="hero-tagline">Every Voice can take Flight</p>
+    <p class="hero-description">
+      An AI-powered communication assistant that helps children find their words
+      naturally and confidently — a gentle nudge, not a replacement for their voice.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://testflight.apple.com/join/SKpZQD96" class="btn-primary" target="_blank">
+        Join the Beta — iOS
+      </a>
+      <a href="mailto:malliksanjibk@gmail.com" class="btn-secondary">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- PHONE MOCKUP -->
+  <section class="preview">
+    <div class="preview-inner">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div>
+            <div class="phone-title">Xpress<span>Able</span></div>
+            <div class="phone-tagline">Every Voice can take Flight</div>
+          </div>
+          <div class="phone-pills">
+            <div class="phone-pill">Short Response</div>
+            <div class="phone-pill">English</div>
+            <div class="phone-pill">Audio Clip 10 sec</div>
+          </div>
+          <div class="phone-button">Tap to listen</div>
+          <div class="phone-box">
+            <div class="phone-box-label">Question:</div>
+            How are you feeling today?
+          </div>
+          <div class="phone-box">
+            <div class="phone-box-label">Reply:</div>
+            I am feeling how?
+          </div>
+          <div class="phone-bottom">
+            <div class="phone-bottom-btn">Chat History</div>
+            <div class="phone-bottom-btn">Profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2 class="section-title">Built for Every Child's Voice</h2>
+    <p class="section-subtitle">Designed with care for children who can speak — and just need a little help finding the right words.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎙️</div>
+        <h3>Listens Naturally</h3>
+        <p>Records questions directed at your child and transcribes them instantly using OpenAI Whisper — accurate, fast, and works in multiple languages.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Responses</h3>
+        <p>Generates age-appropriate, first-person responses your child can use — giving them the words they need, right when they need them.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎧</div>
+        <h3>Spoken Aloud</h3>
+        <p>Responses are spoken clearly through the child's headphones — works beautifully with bone-conduction headphones like Shokz OpenRun.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👤</div>
+        <h3>Personalised Profile</h3>
+        <p>Set up a profile with your child's name, interests, and communication style — the AI tailors every response specifically to them.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Multi-Language</h3>
+        <p>Supports English, Spanish, French, and Hindi — perfect for multilingual families and diverse classrooms.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Feedback Loop</h3>
+        <p>Rate responses and suggest better alternatives — the AI learns what works best for your child over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how-inner">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Three simple steps to give your child their voice.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Set up a Profile</h3>
+            <p>Enter your child's name, age, interests, and communication preferences. XpressAble uses this to make every response feel natural and personal.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Tap to Listen</h3>
+            <p>When someone asks your child a question, tap the big button. XpressAble listens, transcribes the question, and generates a response in seconds.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Hear and Respond</h3>
+            <p>The response is spoken aloud through the headphones. Your child hears what to say — a gentle nudge that builds confidence one conversation at a time.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Review and Improve</h3>
+            <p>Check Chat History to see all exchanges. Rate responses and suggest better ones — the AI gets smarter about your child's specific needs over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BETA CTA -->
+  <section class="beta">
+    <h2>Join the Beta</h2>
+    <p>Be among the first families to experience XpressAble. Free during beta — your feedback shapes the future of the app.</p>
+    <div class="beta-steps">
+      <div class="beta-step">
+        <span>1</span>
+        Install TestFlight
+      </div>
+      <div class="beta-step">
+        <span>2</span>
+        Tap Join Beta below
+      </div>
+      <div class="beta-step">
+        <span>3</span>
+        Install XpressAble
+      </div>
+      <div class="beta-step">
+        <span>4</span>
+        Share your feedback
+      </div>
+    </div>
+    <a href="https://testflight.apple.com/join/SKpZQD96" class="btn-white" target="_blank">
+      Join the Beta on TestFlight
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Xpress<span>Able</span></div>
+    <p>Every Voice can take Flight</p>
+    <br/>
+    <p>
+      Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a>
+    </p>
+    <br/>
+    <p style="font-size:12px; opacity:0.6;">
+      &copy; 2026 XpressAble. All rights reserved. &nbsp;|&nbsp;
+      Available on iOS via TestFlight
+    </p>
+  </footer>
+
+</body>
+</html>
