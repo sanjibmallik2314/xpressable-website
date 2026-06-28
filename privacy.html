@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — XpressAble</title>
+<meta name="description" content="XpressAble Privacy Policy — how we collect, use and protect your data." />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F5F8FF;
+  color: #1A1A1A;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  background: #FFFFFF;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A237E;
+  text-decoration: none;
+}
+.nav-logo span { color: #2E9E6B; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-back {
+  color: #2E74B5;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  border: 2px solid #2E74B5;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-back:hover { background: #F0F7FF; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 24px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-block;
+  background: #E8F4FE;
+  color: #2E74B5;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+.hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #1A237E;
+}
+.hero p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.section-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.section-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A237E;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-card h2 .icon {
+  font-size: 24px;
+}
+
+.section-card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.section-card p:last-child { margin-bottom: 0; }
+
+.section-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+}
+
+.section-card ul li {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.8;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.section-card ul li:last-child { border-bottom: none; }
+
+.section-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2E9E6B;
+  font-weight: 700;
+}
+
+.highlight-box {
+  background: #E8F4FE;
+  border-left: 4px solid #2E74B5;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-size: 15px;
+  color: #1A237E;
+  font-weight: 500;
+}
+
+.green-box {
+  background: #E8F8F0;
+  border-left: 4px solid #2E9E6B;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-size: 15px;
+  color: #1A5C38;
+  font-weight: 500;
+}
+
+/* CONTACT */
+.contact-section {
+  background: #1A237E;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.contact-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.contact-section p {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+.contact-section a {
+  background: #FFFFFF;
+  color: #1A237E;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-block;
+  transition: transform 0.1s;
+}
+.contact-section a:hover { transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+  background: #1A1A1A;
+  color: #999;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 14px;
+}
+footer a { color: #2E74B5; text-decoration: none; }
+footer .footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+footer .footer-logo span { color: #2E9E6B; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  nav { padding: 14px 20px; }
+  .section-card { padding: 22px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Xpress<span>Able</span></a>
+  <div class="nav-links">
+    <a href="/" class="nav-back">← Back to Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">LAST UPDATED: JUNE 2026</div>
+  <h1>Privacy Policy</h1>
+  <p>We built XpressAble to help children find their voice — and we take the privacy of every family seriously.</p>
+  <p>This policy explains what we collect, why, and how we protect it.</p>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- Summary -->
+  <div class="section-card">
+    <h2><span class="icon">📋</span> Summary</h2>
+    <div class="green-box">
+      XpressAble does not collect names, email addresses, phone numbers, location data, or any information that personally identifies you or your child.
+    </div>
+    <p>What we do collect is anonymous and used only to make the app work better for families like yours. Here's the short version:</p>
+    <ul>
+      <li>We generate an anonymous device ID — not linked to you in any way</li>
+      <li>We process speech audio to generate responses — audio is not stored</li>
+      <li>We save conversation exchanges anonymously to improve AI responses</li>
+      <li>We never sell your data or share it with advertisers</li>
+      <li>We never collect names, emails, accounts, or personal identifiers</li>
+    </ul>
+  </div>
+
+  <!-- What We Collect -->
+  <div class="section-card">
+    <h2><span class="icon">🗂️</span> What We Collect</h2>
+
+    <p><strong>Anonymous Device ID</strong></p>
+    <p>When you first open XpressAble, the app generates a random identifier for your device. This is not Apple's device ID — it is a random code we create ourselves. It is used only to group your conversation history so the app can show you your past exchanges. It is not linked to your name, Apple ID, email, or any other personal information.</p>
+
+    <div class="highlight-box">
+      Example device ID: <code>a7f3c2e1-9b4d-4f8a-b2c1-3e7d9f1a2b4c</code> — a random string with no personal meaning.
+    </div>
+
+    <p><strong>Speech Audio</strong></p>
+    <p>When you tap the listen button, XpressAble records audio from your device's microphone and sends it to OpenAI's Whisper service for transcription. The audio is processed in real time and is not stored by XpressAble or retained by our servers after transcription is complete.</p>
+
+    <p><strong>Conversation Exchanges</strong></p>
+    <p>The transcribed question and the AI-generated response are saved to a secure Google Sheet associated with your anonymous device ID. This allows you to review past exchanges in the app's Chat History screen, and allows us to understand which responses work well and which need improvement.</p>
+
+    <p><strong>Ratings and Notes</strong></p>
+    <p>When you rate a response (👍 Good or 👎 Needs work) or add a note or better response suggestion, that information is also saved. This feedback is used directly to improve how the AI responds to questions — helping make XpressAble more useful for all families over time.</p>
+
+    <p><strong>Child Profile Information</strong></p>
+    <p>If you create a profile for your child (name, age, interests), this information is stored locally on your device using encrypted storage. It is never transmitted to our servers and never shared with anyone. It is used only within the app to personalize AI responses.</p>
+  </div>
+
+  <!-- What We Do NOT Collect -->
+  <div class="section-card">
+    <h2><span class="icon">🚫</span> What We Do NOT Collect</h2>
+    <ul>
+      <li>Names, email addresses, or phone numbers</li>
+      <li>Apple ID or any account information</li>
+      <li>Location data or GPS coordinates</li>
+      <li>Photos or camera access</li>
+      <li>Contacts or calendar data</li>
+      <li>Health or medical records</li>
+      <li>Payment or financial information</li>
+      <li>Browsing history or cross-app tracking data</li>
+    </ul>
+  </div>
+
+  <!-- How We Use Data -->
+  <div class="section-card">
+    <h2><span class="icon">⚙️</span> How We Use Your Data</h2>
+    <p>The anonymous data we collect is used for three purposes only:</p>
+    <ul>
+      <li>To make the app work — transcribing speech and generating responses in real time</li>
+      <li>To show you your conversation history inside the app</li>
+      <li>To improve AI response quality over time using anonymized feedback</li>
+    </ul>
+    <div class="highlight-box">
+      We never use your data for advertising, marketing, or any commercial purpose outside of improving XpressAble itself.
+    </div>
+  </div>
+
+  <!-- Third Party Services -->
+  <div class="section-card">
+    <h2><span class="icon">🔗</span> Third-Party Services</h2>
+    <p>XpressAble uses the following third-party services to function:</p>
+
+    <p><strong>OpenAI Whisper</strong> — processes audio recordings for speech-to-text transcription. Audio is sent to OpenAI's servers and processed in real time. OpenAI's privacy policy applies to this processing. Audio is not retained by XpressAble after transcription.</p>
+
+    <p><strong>Anthropic Claude</strong> — generates age-appropriate responses based on the transcribed question and your child's profile. The question text is sent to Anthropic's servers. Anthropic's privacy policy applies. No personal information is included in these requests.</p>
+
+    <p><strong>Google Sheets</strong> — stores anonymous conversation exchanges and feedback. Data is stored under your anonymous device ID only. Google's privacy policy applies to data stored in Sheets.</p>
+
+    <p><strong>Railway</strong> — hosts our backend server that connects XpressAble to OpenAI and Anthropic. Audio and text pass through Railway's servers in transit but are not stored there.</p>
+  </div>
+
+  <!-- Children's Privacy -->
+  <div class="section-card">
+    <h2><span class="icon">👶</span> Children's Privacy</h2>
+    <p>XpressAble is designed to be used by parents and caregivers on behalf of children. We take children's privacy extremely seriously.</p>
+    <div class="green-box">
+      XpressAble does not knowingly collect any personally identifiable information from children. The app does not require children to create accounts, provide names, or share any identifying information.
+    </div>
+    <p>Child profile information (name, age, interests) entered by a caregiver is stored only on the device and never transmitted to our servers. Speech audio is processed in real time and is not retained.</p>
+    <p>If you believe we have inadvertently collected personal information about a child, please contact us immediately at <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a> and we will delete it promptly.</p>
+  </div>
+
+  <!-- Data Retention -->
+  <div class="section-card">
+    <h2><span class="icon">🗄️</span> Data Retention and Deletion</h2>
+    <p>Conversation exchanges saved to Google Sheets are retained to help improve the app over time. Because data is stored anonymously under a random device ID, it is not possible for us to identify which exchanges belong to any specific person.</p>
+    <p>If you would like your device's data deleted, please contact us at <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a> with your anonymous device ID (visible in the app's settings) and we will remove all associated records.</p>
+    <p>Child profile data stored on your device can be deleted at any time by uninstalling the app.</p>
+  </div>
+
+  <!-- Security -->
+  <div class="section-card">
+    <h2><span class="icon">🔒</span> Security</h2>
+    <p>All data transmitted between XpressAble and our backend servers is encrypted using HTTPS. Child profile data stored on your device uses iOS encrypted storage (AsyncStorage with device encryption).</p>
+    <p>We do not store API keys, authentication tokens, or sensitive credentials on your device. All API calls are proxied through our backend server so your device never directly contacts OpenAI or Anthropic with credentials.</p>
+  </div>
+
+  <!-- Your Rights -->
+  <div class="section-card">
+    <h2><span class="icon">⚖️</span> Your Rights</h2>
+    <p>Depending on where you live, you may have rights regarding your personal data including the right to access, correct, or delete data we hold about you. Because we collect only anonymous data, most of these rights apply in a limited way — but we are committed to honoring any reasonable request.</p>
+    <p>To exercise any rights or ask questions about your data, contact us at <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a>.</p>
+  </div>
+
+  <!-- Changes -->
+  <div class="section-card">
+    <h2><span class="icon">📝</span> Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time as the app evolves. When we make significant changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+    <p>Continued use of XpressAble after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-section">
+    <h2>Questions About Privacy?</h2>
+    <p>We're a small team and we care deeply about the families who use XpressAble. If you have any questions, concerns, or requests regarding this privacy policy, please reach out directly.</p>
+    <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Xpress<span>Able</span></div>
+  <p>Every Voice can take Flight</p>
+  <br/>
+  <p>
+    <a href="/">Home</a> &nbsp;|&nbsp;
+    <a href="mailto:malliksanjibk@gmail.com">Contact</a> &nbsp;|&nbsp;
+    <a href="/privacy.html">Privacy Policy</a>
+  </p>
+  <br/>
+  <p style="font-size:12px; opacity:0.6;">
+    &copy; 2026 XpressAble. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
