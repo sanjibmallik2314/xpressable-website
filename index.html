@@ -3,8 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XpressAble — Every Voice can take Flight</title>
-  <meta name="description" content="XpressAble is an AI-powered communication assistant that helps children find their words naturally and confidently." />
+  <title>XpressAble — AI Communication App for Children with Autism & Speech Challenges</title>
+  <meta name="description" content="XpressAble is a free AI-powered communication app for children with autism, speech delays, and communication challenges. Available on iPhone and iOS. Try the demo now." />
+  <meta name="keywords" content="AAC app, autism communication app, speech therapy app, assistive communication iOS, AI communication assistant, app for children with autism, speech delay app, augmentative communication, XpressAble, AAC iPhone app, special needs app, communication app for kids" />
+  <meta name="author" content="XpressAble" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://xpressable.app/" />
+
+  <!-- Open Graph (Facebook / Instagram previews) -->
+  <meta property="og:title" content="XpressAble — AI Communication App for Children" />
+  <meta property="og:description" content="Free AI-powered communication app for children with autism and speech challenges. Listens to questions, responds in the child's voice. Try the demo now." />
+  <meta property="og:url" content="https://xpressable.app" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XpressAble" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="XpressAble — AI Communication App for Children" />
+  <meta name="twitter:description" content="Free AI-powered communication app for children with autism and speech challenges. Available on iPhone. Try the demo." />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "XpressAble",
+    "description": "AI-powered communication assistant for children with autism, speech delays, and communication challenges. Listens to questions and generates age-appropriate first-person responses spoken through the child's headphones.",
+    "url": "https://xpressable.app",
+    "operatingSystem": "iOS",
+    "applicationCategory": "HealthApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Sanjib Mallik" }
+  }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -33,36 +64,14 @@
       color: #1A237E;
     }
     .nav-logo span { color: #2E9E6B; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .nav-demo {
-      color: #2E74B5;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      padding: 10px 22px;
-      border-radius: 9999px;
-      border: 2px solid #2E74B5;
-      transition: background 0.2s, color 0.2s;
-    }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: #1A237E; font-weight: 600; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: #2E74B5; }
+    .nav-demo { color: #2E74B5; font-weight: 600; font-size: 14px; text-decoration: none; padding: 10px 22px; border-radius: 9999px; border: 2px solid #2E74B5; transition: background 0.2s, color 0.2s; }
     .nav-demo:hover { background: #F0F7FF; }
-    .nav-cta {
-      background: #2E74B5;
-      color: #FFFFFF;
-      padding: 10px 22px;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: background 0.2s;
-    }
+    .nav-cta { background: #2E74B5; color: #FFFFFF; padding: 10px 22px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
     .nav-cta:hover { background: #1A5A9A; }
-    @media (max-width: 600px) {
-      .nav-demo { display: none; }
-    }
+    @media (max-width: 700px) { .nav-link { display: none; } .nav-demo { display: none; } }
 
     /* HERO */
     .hero {
@@ -397,152 +406,21 @@
     }
     footer .footer-logo span { color: #2E9E6B; }
 
-    /* DEMO SECTION */
-    .demo-section {
-      padding: 70px 24px;
-      background: #F5F8FF;
-      text-align: center;
-    }
-    .demo-section .section-subtitle {
-      margin-bottom: 40px;
-    }
-
-    /* ── PHONE FRAME (demo) ── */
-    .demo-phone-frame {
-      width: 320px;
-      background: #F5F8FF;
-      border-radius: 44px;
-      border: 8px solid #1a1a1a;
-      box-shadow: 0 0 0 2px #444, 0 28px 70px rgba(0,0,0,0.22);
-      overflow: hidden;
-      position: relative;
-      min-height: 630px;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-    }
-    .demo-phone-notch {
-      width: 120px; height: 22px;
-      background: #1a1a1a;
-      border-radius: 0 0 16px 16px;
-      margin: 0 auto 4px;
-      flex-shrink: 0;
-    }
-    .demo-app-inner {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; padding: 8px 16px 16px; gap: 9px;
-    }
-    .demo-logo-text {
-      font-size: 26px; font-weight: 800; letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #1a2e6e 0%, #6B4FE0 55%, #22C98E 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .demo-tagline { font-size: 10px; color: #999; font-style: italic; margin-top: -2px; }
-    .demo-top-pills { display: flex; gap: 4px; width: 100%; }
-    .demo-pill {
-      flex: 1; padding: 5px 4px; border-radius: 999px;
-      background: #fff; border: 1.5px solid #2E74B5;
-      text-align: center; font-size: 9px; font-weight: 600;
-      color: #2E74B5; cursor: pointer; user-select: none;
-      transition: background 0.15s, color 0.15s;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .demo-pill.active { background: #2E74B5; color: #fff; }
-    .demo-mode-row { display: flex; gap: 6px; width: 65%; }
-    .demo-mode-btn {
-      flex: 1; padding: 6px 4px; border-radius: 999px;
-      border: 1.5px solid #ccc; background: #fff;
-      font-size: 10px; font-weight: 600; color: #999;
-      cursor: pointer; text-align: center; user-select: none;
-      transition: background 0.15s, color 0.15s;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .demo-mode-btn.am { background: #2E74B5; border-color: #2E74B5; color: #fff; }
-    .demo-mode-btn.aa { background: #27AE60; border-color: #27AE60; color: #fff; }
-    .demo-record-btn {
-      width: 130px; height: 130px; border-radius: 50%; border: none;
-      font-size: 11px; font-weight: 600; color: #fff; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 14px; line-height: 1.4;
-      user-select: none; transition: background 0.2s, transform 0.1s;
-      white-space: pre-line;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .demo-record-btn:active { transform: scale(0.96); }
-    @keyframes demoPulse {
-      0%   { box-shadow: 0 0 0 0   rgba(39,174,96,0.5); }
-      70%  { box-shadow: 0 0 0 14px rgba(39,174,96,0);   }
-      100% { box-shadow: 0 0 0 0   rgba(39,174,96,0);   }
-    }
-    .demo-pulse { animation: demoPulse 1.4s ease infinite; }
-    .demo-text-box {
-      width: 100%; background: #fff; border-radius: 10px;
-      padding: 10px 12px; min-height: 48px; text-align: left;
-    }
-    .demo-box-label {
-      font-size: 9px; font-weight: 700; color: #888;
-      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;
-    }
-    .demo-box-text { font-size: 12px; color: #1a1a1a; line-height: 1.5; min-height: 16px; }
-    .demo-reply-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
-    .demo-replay-btn {
-      padding: 3px 8px; border-radius: 999px; background: #2E74B5;
-      border: none; color: #fff; font-size: 9px; font-weight: 600; cursor: pointer;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .demo-replay-btn:disabled { opacity: 0.35; cursor: default; }
-    .demo-type-wrap { display: none; flex-direction: column; gap: 8px; width: 100%; }
-    .demo-type-wrap.visible { display: flex; }
-    .demo-type-input {
-      width: 100%; padding: 8px 10px; border-radius: 8px;
-      border: 1.5px solid #2E74B5; font-size: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #fff; outline: none; color: #1a1a1a;
-    }
-    .demo-send-btn {
-      padding: 7px 16px; border-radius: 999px; background: #1a2e6e;
-      border: none; color: #fff; font-size: 11px; font-weight: 600;
-      cursor: pointer; align-self: flex-end;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .demo-send-btn:disabled { opacity: 0.5; cursor: default; }
-    .demo-status { font-size: 10px; color: #999; font-style: italic; text-align: center; min-height: 14px; padding: 0 4px; }
-    .demo-bottom-row { display: flex; gap: 8px; width: 100%; margin-top: auto; }
-    .demo-bottom-btn {
-      flex: 1; padding: 10px 4px; border-radius: 12px;
-      background: #fff; border: 1.5px solid #2E74B5;
-      color: #2E74B5; font-size: 9px; font-weight: 600;
-      text-align: center; cursor: pointer; user-select: none;
-    }
-    .demo-hist-panel {
-      display: none; position: absolute; inset: 0;
-      background: #F5F8FF; border-radius: 36px;
-      padding: 16px 14px; overflow-y: auto; z-index: 10;
-      flex-direction: column; gap: 8px;
-    }
-    .demo-hist-panel.visible { display: flex; }
-    .demo-hist-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .demo-hist-title { font-size: 14px; font-weight: 700; color: #1a1a1a; }
-    .demo-hist-back  { font-size: 11px; font-weight: 600; color: #2E74B5; cursor: pointer; }
-    .demo-hist-item  { background: #fff; border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
-    .demo-hist-q     { font-size: 11px; color: #1a1a1a; margin-bottom: 4px; }
-    .demo-hist-a     { font-size: 11px; color: #2E74B5; }
-    .demo-hist-empty { font-size: 12px; color: #aaa; text-align: center; margin-top: 40px; }
-
     @media (max-width: 600px) {
       .hero h1 { font-size: 36px; }
       nav { padding: 14px 20px; }
       .beta h2 { font-size: 26px; }
-      .nav-demo { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">Xpress<span>Able</span></div>
     <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="for-therapists.html" class="nav-link">For Therapists</a>
+      <a href="blog.html" class="nav-link">Blog</a>
       <a href="#demo" class="nav-demo">Demo</a>
       <a href="https://testflight.apple.com/join/SKpZQD96" class="nav-cta" target="_blank">Join Beta</a>
     </div>
@@ -675,189 +553,6 @@
     </div>
   </section>
 
-  <!-- DEMO -->
-  <section class="demo-section" id="demo">
-    <h2 class="section-title">Try It Right Now</h2>
-    <p class="section-subtitle">Type a question as if talking to a child. See exactly how XpressAble responds — in the child's own voice.</p>
-
-    <div class="demo-phone-frame">
-      <div class="demo-phone-notch"></div>
-
-      <div class="demo-hist-panel" id="dHistPanel">
-        <div class="demo-hist-header">
-          <span class="demo-hist-back" onclick="dCloseHistory()">← Back</span>
-          <span class="demo-hist-title">Chat history</span>
-          <span style="width:40px"></span>
-        </div>
-        <div id="dHistList"><p class="demo-hist-empty">No exchanges yet.</p></div>
-      </div>
-
-      <div class="demo-app-inner">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-          <div class="demo-logo-text">XpressAble</div>
-          <div class="demo-tagline">Every Voice can take Flight</div>
-        </div>
-
-        <div class="demo-top-pills">
-          <div class="demo-pill active" id="dModePill" onclick="dToggleMode()">Short response</div>
-          <div class="demo-pill" id="dLangPill" onclick="dCycleLang()">English</div>
-          <div class="demo-pill" id="dDurPill"  onclick="dCycleDur()">Audio 3s</div>
-        </div>
-
-        <div class="demo-mode-row">
-          <div class="demo-mode-btn am" id="dManualBtn" onclick="dSetMode('manual')">✋ Manual</div>
-          <div class="demo-mode-btn"   id="dAutoBtn"   onclick="dSetMode('auto')">🎙 Auto</div>
-        </div>
-
-        <button class="demo-record-btn" id="dRecordBtn" onclick="dHandlePress()" style="background:#2E74B5;">
-          Tap to type&#10;a question
-        </button>
-
-        <div class="demo-type-wrap" id="dTypeWrap">
-          <input class="demo-type-input" id="dTypeInput"
-                 placeholder='e.g. "How are you feeling today?"' maxlength="150" />
-          <button class="demo-send-btn" id="dSendBtn" onclick="dSubmit()">Send ↗</button>
-        </div>
-
-        <div class="demo-text-box">
-          <div class="demo-box-label">Question:</div>
-          <div class="demo-box-text" id="dQBox" style="color:#ccc;font-style:italic;font-size:11px;">Waiting for input…</div>
-        </div>
-
-        <div class="demo-text-box">
-          <div class="demo-reply-header">
-            <div class="demo-box-label">Reply:</div>
-            <button class="demo-replay-btn" id="dReplayBtn" onclick="dReplay()" disabled>🔊 Replay</button>
-          </div>
-          <div class="demo-box-text" id="dRBox" style="color:#ccc;font-style:italic;font-size:11px;">AI response appears here…</div>
-        </div>
-
-        <div class="demo-status" id="dStatus"></div>
-
-        <div class="demo-bottom-row">
-          <div class="demo-bottom-btn" onclick="dOpenHistory()">📋 Chat history</div>
-          <div class="demo-bottom-btn" onclick="dProfileNote()">👤 Profile</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const D_BACKEND    = 'https://speechhelperbackend-production.up.railway.app';
-    const D_LANGS      = ['English','Spanish','French','Hindi'];
-    const D_LANG_CODES = ['en','es','fr','hi'];
-    const D_DURS       = ['3s','6s','9s'];
-    let dLangIdx = 0, dDurIdx = 0, dMode = 'quick', dAppMode = 'manual', dPhase = 'idle', dLastReply = '', dHistory = [];
-
-    const D_PROMPTS = {
-      quick:    `You are a communication helper for a child with speech difficulties. Respond in FIRST PERSON as the child (use I, me, my) for personal questions. For factual questions, answer helpfully and neutrally. Reply in ONE short sentence, under 8 words. No greetings, no filler, no questions back. Never use emojis. Never say I don't know — always give a direct answer or a warm first-person reply. Always reply in {LANG}.`,
-      detailed: `You are a communication helper for a child with speech difficulties. Always respond in FIRST PERSON as the child (use I, me, my) — you are giving the child words to say. Give a complete answer in 2 sentences: first answers the question directly, second adds something warm and natural. Keep both sentences short and easy to say aloud. Never use emojis. Never mention being an AI. Always reply in {LANG}.`
-    };
-
-    function dGetPrompt() { return D_PROMPTS[dMode].replace('{LANG}', D_LANGS[dLangIdx]); }
-
-    function dToggleMode() {
-      dMode = dMode === 'quick' ? 'detailed' : 'quick';
-      const el = document.getElementById('dModePill');
-      el.textContent = dMode === 'quick' ? 'Short response' : 'Long response';
-      el.className   = 'demo-pill' + (dMode === 'detailed' ? ' active' : '');
-    }
-    function dCycleLang() { dLangIdx = (dLangIdx+1) % D_LANGS.length; document.getElementById('dLangPill').textContent = D_LANGS[dLangIdx]; }
-    function dCycleDur()  { dDurIdx  = (dDurIdx +1) % D_DURS.length;  document.getElementById('dDurPill').textContent  = 'Audio ' + D_DURS[dDurIdx]; }
-
-    function dSetMode(m) {
-      dAppMode = m;
-      document.getElementById('dManualBtn').className = 'demo-mode-btn' + (m === 'manual' ? ' am' : '');
-      document.getElementById('dAutoBtn').className   = 'demo-mode-btn' + (m === 'auto'   ? ' aa' : '');
-      if (m === 'auto') { dStatus('Auto mode uses voice detection — type below to demo the AI.'); dUpdateBtn('🎙 Auto mode\n(type below)', '#27AE60', false); }
-      else              { dStatus(''); dIdleBtn(); }
-    }
-
-    function dIdleBtn() { dUpdateBtn('Tap to type\na question', '#2E74B5', false); }
-    function dUpdateBtn(text, color, pulse) {
-      const b = document.getElementById('dRecordBtn');
-      b.textContent = text; b.style.background = color;
-      b.className = 'demo-record-btn' + (pulse ? ' demo-pulse' : '');
-    }
-    function dStatus(msg) { document.getElementById('dStatus').textContent = msg; }
-
-    function dHandlePress() {
-      if (dPhase !== 'idle') return;
-      if (dAppMode === 'auto') { dStatus('Switch to Manual to type a question.'); return; }
-      dPhase = 'typing';
-      dUpdateBtn('Type your question\nbelow ↓', '#2E74B5', false);
-      document.getElementById('dTypeWrap').classList.add('visible');
-      setTimeout(() => document.getElementById('dTypeInput').focus(), 50);
-      dStatus('Type a question, then press Send.');
-    }
-
-    async function dSubmit() {
-      const input = document.getElementById('dTypeInput');
-      const q = input.value.trim(); if (!q) return;
-      document.getElementById('dTypeWrap').classList.remove('visible');
-      document.getElementById('dSendBtn').disabled = true;
-      input.value = '';
-
-      const qBox = document.getElementById('dQBox');
-      qBox.textContent = q; qBox.style.color = '#1a1a1a'; qBox.style.fontStyle = 'normal'; qBox.style.fontSize = '12px';
-
-      const rBox = document.getElementById('dRBox');
-      rBox.textContent = 'Thinking…'; rBox.style.color = '#8E44AD'; rBox.style.fontStyle = 'italic'; rBox.style.fontSize = '11px';
-
-      dPhase = 'thinking'; dUpdateBtn('⏳ Thinking…', '#8E44AD', false); dStatus('');
-      document.getElementById('dReplayBtn').disabled = true;
-
-      try {
-        const res = await fetch(D_BACKEND + '/ask', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question: q, systemPrompt: dGetPrompt() })
-        });
-        if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e.error || 'Server error ' + res.status); }
-        const data = await res.json();
-        const answer = data.text || 'No response received.';
-
-        dLastReply = answer;
-        rBox.textContent = answer; rBox.style.color = '#1a1a1a'; rBox.style.fontStyle = 'normal'; rBox.style.fontSize = '12px';
-        dHistory.unshift({ q, a: answer });
-        document.getElementById('dReplayBtn').disabled = false;
-
-        dPhase = 'speaking'; dUpdateBtn('🔊 Speaking…', '#27AE60', true);
-        if ('speechSynthesis' in window) {
-          const u = new SpeechSynthesisUtterance(answer);
-          u.lang = D_LANG_CODES[dLangIdx]; u.rate = 0.9; u.pitch = 1.1;
-          u.onend = u.onerror = () => { dPhase = 'idle'; dIdleBtn(); };
-          window.speechSynthesis.cancel();
-          window.speechSynthesis.speak(u);
-        } else { dPhase = 'idle'; dIdleBtn(); }
-
-      } catch(err) {
-        rBox.textContent = 'Something went wrong. Please try again.';
-        rBox.style.color = '#c0392b'; rBox.style.fontStyle = 'normal'; rBox.style.fontSize = '11px';
-        dStatus('Error: ' + err.message); dPhase = 'idle'; dIdleBtn();
-      }
-      document.getElementById('dSendBtn').disabled = false;
-    }
-
-    function dReplay() {
-      if (!dLastReply || !('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(dLastReply);
-      u.lang = D_LANG_CODES[dLangIdx]; u.rate = 0.9; u.pitch = 1.1;
-      window.speechSynthesis.speak(u);
-    }
-    function dOpenHistory() {
-      document.getElementById('dHistList').innerHTML = dHistory.length === 0
-        ? '<p class="demo-hist-empty">No exchanges yet. Try asking a question!</p>'
-        : dHistory.map(h => `<div class="demo-hist-item"><div class="demo-hist-q">Q: ${h.q}</div><div class="demo-hist-a">A: ${h.a}</div></div>`).join('');
-      document.getElementById('dHistPanel').classList.add('visible');
-    }
-    function dCloseHistory() { document.getElementById('dHistPanel').classList.remove('visible'); }
-    function dProfileNote() { dStatus("Profile personalises responses with the child's name and interests — available in the full app."); }
-
-    document.getElementById('dTypeInput').addEventListener('keydown', e => { if (e.key === 'Enter') dSubmit(); });
-  </script>
-
   <!-- BETA CTA -->
   <section class="beta">
     <h2>Join the Beta</h2>
@@ -885,19 +580,22 @@
     </a>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Xpress<span>Able</span></div>
     <p>Every Voice can take Flight</p>
     <br/>
     <p>
-      Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a>
+      <a href="about.html">About</a> &nbsp;|&nbsp;
+      <a href="for-therapists.html">For Therapists</a> &nbsp;|&nbsp;
+      <a href="blog.html">Blog</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
     </p>
     <br/>
+    <p>Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a></p>
+    <br/>
     <p style="font-size:12px; opacity:0.6;">
-&copy; 2026 XpressAble. All rights reserved. &nbsp;|&nbsp;
-<a href="/privacy.html" style="color:#2E74B5;">Privacy Policy</a> &nbsp;|&nbsp;
-Available on iOS via TestFlight
+      &copy; 2026 XpressAble. All rights reserved. &nbsp;|&nbsp;
+      Available on iOS via TestFlight
     </p>
   </footer>
 
