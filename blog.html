@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XpressAble Blog — Insights on AAC, Autism & Assistive Communication</title>
+  <meta name="description" content="The XpressAble blog covers AI communication tools, AAC strategies, autism parenting, speech therapy tips, and assistive technology for children with communication challenges." />
+  <meta name="keywords" content="AAC blog, autism communication blog, assistive technology for children, speech therapy tips, AI communication app blog, XpressAble blog, autism parenting, AAC strategies, speech delay resources, communication challenges children" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://xpressable.app/blog.html" />
+
+  <meta property="og:title" content="XpressAble Blog — AAC, Autism & Assistive Communication" />
+  <meta property="og:description" content="Insights on AI communication tools, AAC strategies, and resources for families and therapists supporting children with autism and speech challenges." />
+  <meta property="og:url" content="https://xpressable.app/blog.html" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "XpressAble Blog",
+    "url": "https://xpressable.app/blog.html",
+    "description": "Insights on AI-powered AAC tools, autism communication strategies, and assistive technology for children.",
+    "publisher": { "@type": "Organization", "name": "XpressAble", "url": "https://xpressable.app" }
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F8FF; color: #1A1A1A; line-height: 1.6; }
+
+    nav { background: #FFFFFF; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-size: 22px; font-weight: 700; color: #1A237E; text-decoration: none; }
+    .nav-logo span { color: #2E9E6B; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: #1A237E; font-weight: 600; font-size: 14px; text-decoration: none; }
+    .nav-link:hover { color: #2E74B5; }
+    .nav-cta { background: #2E74B5; color: #FFFFFF; padding: 10px 22px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 14px; }
+    .nav-cta:hover { background: #1A5A9A; }
+    @media (max-width: 700px) { .nav-link { display: none; } }
+
+    .page-hero { text-align: center; padding: 60px 24px 40px; max-width: 720px; margin: 0 auto; }
+    .hero-badge { display: inline-block; background: #E8F4FE; color: #2E74B5; font-size: 13px; font-weight: 600; padding: 6px 16px; border-radius: 9999px; margin-bottom: 20px; }
+    .page-hero h1 { font-size: 42px; font-weight: 800; color: #1A237E; margin-bottom: 14px; }
+    .page-hero p { font-size: 17px; color: #555; line-height: 1.8; }
+
+    .blog-layout { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
+    @media (max-width: 760px) { .blog-layout { grid-template-columns: 1fr; } .sidebar { display: none; } }
+
+    /* FEATURED POST */
+    .featured-post { background: #FFFFFF; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); margin-bottom: 32px; }
+    .featured-banner { background: linear-gradient(135deg, #1A237E 0%, #2E74B5 100%); padding: 40px 36px; color: #FFFFFF; }
+    .post-tag { display: inline-block; background: rgba(255,255,255,0.2); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .featured-banner h2 { font-size: 26px; font-weight: 800; line-height: 1.3; margin-bottom: 12px; }
+    .featured-banner .meta { font-size: 13px; opacity: 0.75; }
+    .featured-body { padding: 32px 36px; }
+    .featured-body p { font-size: 16px; color: #444; line-height: 1.9; margin-bottom: 20px; }
+    .featured-body h3 { font-size: 20px; font-weight: 700; color: #1A237E; margin: 28px 0 12px; }
+    .featured-body ul { padding-left: 20px; margin-bottom: 20px; }
+    .featured-body ul li { font-size: 15px; color: #444; line-height: 1.8; margin-bottom: 8px; }
+    .featured-body .callout { background: #F0F7FF; border-left: 4px solid #2E74B5; padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 24px 0; font-size: 15px; font-style: italic; color: #333; line-height: 1.8; }
+    .post-footer { border-top: 1px solid #F0F0F0; padding: 20px 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .post-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .post-tag-pill { background: #F0F7FF; color: #2E74B5; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+    .share-link { color: #2E74B5; font-size: 14px; font-weight: 600; text-decoration: none; }
+
+    /* COMING SOON POSTS */
+    .post-card { background: #FFFFFF; border-radius: 16px; padding: 24px 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .post-card .tag { display: inline-block; background: #F0F7FF; color: #2E74B5; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; text-transform: uppercase; }
+    .post-card h3 { font-size: 18px; font-weight: 700; color: #1A237E; margin-bottom: 8px; line-height: 1.35; }
+    .post-card p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 12px; }
+    .post-card .coming { font-size: 12px; font-weight: 600; color: #2E9E6B; background: #E8F9F0; padding: 3px 10px; border-radius: 999px; display: inline-block; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-card { background: #FFFFFF; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .sidebar-card h3 { font-size: 16px; font-weight: 700; color: #1A237E; margin-bottom: 14px; }
+    .sidebar-card p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+    .btn-small { display: inline-block; background: #2E74B5; color: #fff; padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .sidebar-topics { display: flex; flex-wrap: wrap; gap: 8px; }
+    .topic-pill { background: #F0F7FF; color: #2E74B5; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
+    .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-link { color: #2E74B5; font-size: 14px; font-weight: 600; text-decoration: none; line-height: 1.4; }
+    .sidebar-link:hover { text-decoration: underline; }
+
+    footer { background: #1A1A1A; color: #999; text-align: center; padding: 32px 24px; font-size: 14px; }
+    footer a { color: #2E74B5; text-decoration: none; }
+    .footer-logo { font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+    .footer-logo span { color: #2E9E6B; }
+
+    @media (max-width: 600px) { .page-hero h1 { font-size: 30px; } nav { padding: 14px 20px; } .featured-body { padding: 24px 20px; } .featured-banner { padding: 28px 20px; } .post-footer { padding: 16px 20px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Xpress<span>Able</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="for-therapists.html" class="nav-link">For Therapists</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="index.html#demo" class="nav-link">Demo</a>
+      <a href="https://testflight.apple.com/join/SKpZQD96" class="nav-cta" target="_blank">Join Beta</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-badge">XPRESSABLE BLOG</div>
+    <h1>Insights & Resources</h1>
+    <p>Practical guidance for families, caregivers, and therapists supporting children with autism, speech delays, and communication challenges.</p>
+  </section>
+
+  <div class="blog-layout">
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- FEATURED POST -->
+      <article class="featured-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="author" content="Sanjib Mallik" />
+        <meta itemprop="datePublished" content="2026-06-29" />
+        <div class="featured-banner">
+          <div class="post-tag">⭐ First Post</div>
+          <h2 itemprop="headline">Why "A Gentle Nudge" Is the Right Philosophy for Assistive Communication</h2>
+          <div class="meta">By Sanjib Mallik &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; 5 min read</div>
+        </div>
+        <div class="featured-body" itemprop="articleBody">
+          <p>When I started building XpressAble, I had one principle I kept coming back to: the app should give children the words they need, not take the words away from them.</p>
+          <p>This sounds obvious. But it's actually a design challenge that shapes every decision we make — from how responses are worded, to how long the AI waits before speaking, to the choice to deliver responses through headphones rather than out loud for everyone to hear.</p>
+
+          <div class="callout">"The goal was never to make a device that speaks for my son. It was to give him a bridge — something that gets him to the other side, so he can walk across himself."</div>
+
+          <h3>The Difference Between a Nudge and a Crutch</h3>
+          <p>There's an important distinction in assistive communication between tools that empower and tools that replace. A wheelchair empowers someone to move — it doesn't walk for them. XpressAble is designed with the same philosophy.</p>
+          <p>When a child hears a suggested response through their headphones, they still choose whether to say it. They still own the moment. The app just removes the wall that sometimes appears between thought and speech — the split-second freeze, the overwhelming blankness that can happen when someone asks a direct question.</p>
+
+          <h3>Why First-Person Responses Matter</h3>
+          <p>Every response XpressAble generates is in the first person. "I feel happy." "I'd like to play outside." "I think that was funny." This is deliberate — and it matters for several reasons:</p>
+          <ul>
+            <li><strong>It reinforces identity.</strong> The child is always the speaker. The app never answers as a third party or narrator.</li>
+            <li><strong>It mirrors therapy goals.</strong> Speech-language pathologists work hard to build first-person language. XpressAble reinforces the same patterns in everyday situations.</li>
+            <li><strong>It builds confidence.</strong> When a child says "I feel happy" — even with a prompt — they experience the success of communicating. That experience accumulates.</li>
+          </ul>
+
+          <h3>The Role of Headphones</h3>
+          <p>One of the most important design decisions in XpressAble is that responses are delivered privately through the child's headphones. This makes the support invisible to others — there's no screen to look at, no obvious device to draw attention to, no indication to the people around them that they're receiving help.</p>
+          <p>For children with autism or social anxiety, visibility of support can itself be a source of anxiety. Bone-conduction headphones like the Shokz OpenRun are particularly well-suited to this — the child can hear the suggested response while still hearing the full conversation around them.</p>
+
+          <h3>What "Free During Beta" Really Means</h3>
+          <p>Assistive technology has historically been expensive. AAC devices can cost thousands of dollars. We believe that the children who most need communication support should not be the ones least likely to get it because of cost.</p>
+          <p>XpressAble is free during beta — and we are committed to keeping it accessible to as many families as possible. Your feedback during this period directly shapes the app. Every rating, every suggested alternative response, every message we receive from a parent or therapist improves what XpressAble becomes.</p>
+          <p>Thank you for being part of this journey. Every Voice can take Flight. 💙</p>
+        </div>
+        <div class="post-footer">
+          <div class="post-tags">
+            <span class="post-tag-pill">AAC</span>
+            <span class="post-tag-pill">Autism</span>
+            <span class="post-tag-pill">Communication</span>
+            <span class="post-tag-pill">Assistive Tech</span>
+            <span class="post-tag-pill">Speech Therapy</span>
+          </div>
+          <a href="index.html#demo" class="share-link">Try the demo →</a>
+        </div>
+      </article>
+
+      <!-- UPCOMING POSTS -->
+      <h2 style="font-size:22px;font-weight:700;color:#1A237E;margin-bottom:20px;">Coming Soon</h2>
+
+      <div class="post-card">
+        <div class="tag">Parenting</div>
+        <h3>5 Real Conversations XpressAble Has Helped With — And What We Learned</h3>
+        <p>Real examples from beta families showing how XpressAble helped children navigate difficult social moments, from family dinners to classroom questions.</p>
+        <span class="coming">Coming July 2026</span>
+      </div>
+
+      <div class="post-card">
+        <div class="tag">For Therapists</div>
+        <h3>How Speech-Language Pathologists Are Using AI Tools Between Sessions</h3>
+        <p>A look at how SLPs are recommending AI-powered communication tools to complement therapy goals — and what to look for when evaluating apps for your clients.</p>
+        <span class="coming">Coming July 2026</span>
+      </div>
+
+      <div class="post-card">
+        <div class="tag">Technology</div>
+        <h3>Bone-Conduction Headphones & AAC: Why the Shokz OpenRun Works So Well</h3>
+        <p>How bone-conduction technology gives children with communication challenges a discreet, comfortable way to receive audio prompts while staying fully present in conversation.</p>
+        <span class="coming">Coming August 2026</span>
+      </div>
+
+      <div class="post-card">
+        <div class="tag">Autism</div>
+        <h3>Moving from Silence to Conversation: Building Communicative Confidence Step by Step</h3>
+        <p>Practical strategies for parents and caregivers to help children who struggle with verbal responses become more confident communicators over time.</p>
+        <span class="coming">Coming August 2026</span>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <h3>Try XpressAble Free</h3>
+        <p>Interactive demo available right now in your browser — no download needed.</p>
+        <a href="index.html#demo" class="btn-small">Try the Demo</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Topics</h3>
+        <div class="sidebar-topics">
+          <span class="topic-pill">AAC</span>
+          <span class="topic-pill">Autism</span>
+          <span class="topic-pill">Speech Therapy</span>
+          <span class="topic-pill">Parenting</span>
+          <span class="topic-pill">Assistive Tech</span>
+          <span class="topic-pill">AI</span>
+          <span class="topic-pill">Headphones</span>
+          <span class="topic-pill">Communication</span>
+          <span class="topic-pill">Special Needs</span>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Useful Links</h3>
+        <div class="sidebar-links">
+          <a href="about.html" class="sidebar-link">About XpressAble →</a>
+          <a href="for-therapists.html" class="sidebar-link">For Speech Therapists →</a>
+          <a href="https://isaac-online.org" class="sidebar-link" target="_blank">ISAAC International →</a>
+          <a href="https://autismsociety.org" class="sidebar-link" target="_blank">Autism Society →</a>
+          <a href="https://www.asha.org" class="sidebar-link" target="_blank">ASHA →</a>
+          <a href="https://www.ussaac.org" class="sidebar-link" target="_blank">USSAAC →</a>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Get in Touch</h3>
+        <p>Have a story to share or a topic you'd like us to cover? We'd love to hear from you.</p>
+        <a href="mailto:malliksanjibk@gmail.com" class="btn-small">Email Us</a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">Xpress<span>Able</span></div>
+    <p>Every Voice can take Flight</p>
+    <br/>
+    <p>
+      <a href="about.html">About</a> &nbsp;|&nbsp;
+      <a href="for-therapists.html">For Therapists</a> &nbsp;|&nbsp;
+      <a href="blog.html">Blog</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+    <br/>
+    <p>Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a></p>
+    <br/>
+    <p style="font-size:12px; opacity:0.6;">&copy; 2026 XpressAble. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
