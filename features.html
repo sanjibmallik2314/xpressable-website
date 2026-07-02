@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — XpressAble</title>
+  <meta name="description" content="Explore every feature of XpressAble — the AI communication assistant for children with autism and speech challenges." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F5F8FF;
+      color: #1A1A1A;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: #FFFFFF;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-size: 22px; font-weight: 700; color: #1A237E; text-decoration: none; }
+    .nav-logo span { color: #2E9E6B; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: #1A237E; font-weight: 600; font-size: 14px; text-decoration: none; }
+    .nav-link:hover { color: #2E74B5; }
+    .nav-cta { background: #2E74B5; color: #FFFFFF; padding: 10px 22px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 14px; }
+    @media (max-width: 700px) { .nav-link { display: none; } nav { padding: 14px 20px; } }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #E8F4FE;
+      color: #2E74B5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: 42px; font-weight: 800; color: #1A237E; margin-bottom: 12px; }
+    .hero h1 span { color: #2E9E6B; }
+    .hero p { font-size: 18px; color: #555; line-height: 1.8; }
+
+    /* ANNOTATED PHONE SECTION */
+    .annotated-section {
+      background: #FFFFFF;
+      padding: 70px 24px;
+    }
+    .annotated-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+
+    /* PHONE + CALLOUTS LAYOUT */
+    .phone-annotated {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* LEFT CALLOUTS */
+    .callouts-left {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 280px;
+      padding-top: 60px;
+    }
+
+    /* RIGHT CALLOUTS */
+    .callouts-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 280px;
+      padding-top: 60px;
+    }
+
+    /* CALLOUT BUBBLE */
+    .callout {
+      background: #F5F8FF;
+      border-radius: 14px;
+      padding: 16px 18px;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-left: 4px solid #2E74B5;
+    }
+    .callout.green { border-left-color: #2E9E6B; }
+    .callout.navy { border-left-color: #1A237E; }
+    .callout-number {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background: #2E74B5;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+    .callout.green .callout-number { background: #2E9E6B; }
+    .callout.navy .callout-number { background: #1A237E; }
+    .callout h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 4px;
+    }
+    .callout p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .callout-arrow {
+      font-size: 18px;
+      text-align: right;
+      margin-top: 6px;
+      color: #2E74B5;
+    }
+    .callout.green .callout-arrow { color: #2E9E6B; }
+    .callout.navy .callout-arrow { color: #1A237E; }
+    .callouts-right .callout-arrow { text-align: left; }
+
+    /* PHONE MOCKUP */
+    .phone-wrap {
+      flex-shrink: 0;
+    }
+    .phone-mockup {
+      width: 240px;
+      background: #1A1A1A;
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+    .phone-screen {
+      background: #F5F8FF;
+      border-radius: 30px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Phone UI elements */
+    .p-logo { font-size: 15px; font-weight: 800; color: #1A237E; }
+    .p-logo span { color: #2E9E6B; }
+    .p-tagline { font-size: 8px; color: #999; font-style: italic; margin-top: -6px; }
+
+    .p-pills {
+      display: flex;
+      gap: 4px;
+      width: 100%;
+      justify-content: center;
+    }
+    .p-pill {
+      background: #FFFFFF;
+      border: 1.5px solid #2E74B5;
+      color: #2E74B5;
+      font-size: 7.5px;
+      font-weight: 600;
+      padding: 3px 6px;
+      border-radius: 9999px;
+      text-align: center;
+      flex: 1;
+    }
+    .p-pill.active { background: #2E74B5; color: #FFFFFF; }
+
+    .p-button {
+      width: 110px;
+      height: 110px;
+      border-radius: 55px;
+      background: #2E74B5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(46,116,181,0.4);
+    }
+
+    .p-box {
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 7px 9px;
+    }
+    .p-box-label {
+      font-size: 7px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+    .p-box-text { font-size: 9px; color: #1A1A1A; }
+
+    .p-reply-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+    .p-replay {
+      background: #2E74B5;
+      color: #FFFFFF;
+      font-size: 7px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 9999px;
+    }
+
+    .p-bottom {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+    .p-bottom-btn {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1.5px solid #2E74B5;
+      border-radius: 8px;
+      padding: 5px 4px;
+      font-size: 8px;
+      color: #2E74B5;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* FEATURE DEEP DIVES */
+    .features-detail {
+      padding: 70px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .feature-row {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+    }
+    .feature-row.reverse { flex-direction: row-reverse; }
+
+    .feature-icon-large {
+      font-size: 56px;
+      flex-shrink: 0;
+    }
+    .feature-detail-content { flex: 1; min-width: 260px; }
+    .feature-detail-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 10px;
+    }
+    .feature-detail-content p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .feature-tag {
+      display: inline-block;
+      background: #E8F4FE;
+      color: #2E74B5;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    .feature-tag.green { background: #E8F8F0; color: #2E9E6B; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #1A237E 0%, #2E74B5 100%);
+      padding: 70px 24px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .cta-section p { font-size: 18px; opacity: 0.85; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-white {
+      background: #FFFFFF;
+      color: #2E74B5;
+      padding: 16px 40px;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1A1A1A;
+      color: #999;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+    }
+    footer a { color: #2E74B5; text-decoration: none; }
+    .footer-logo { font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+    .footer-logo span { color: #2E9E6B; }
+
+    @media (max-width: 800px) {
+      .callouts-left, .callouts-right { max-width: 100%; padding-top: 0; }
+      .phone-annotated { flex-direction: column; align-items: center; }
+      .callout-arrow { display: none; }
+      .hero h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Xpress<span>Able</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="for-therapists.html" class="nav-link">For Therapists</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="https://testflight.apple.com/join/SKpZQD96" class="nav-cta" target="_blank">Join Beta</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">EVERY FEATURE EXPLAINED</div>
+    <h1>Inside <span>XpressAble</span></h1>
+    <p>A guided tour of every button, setting and feature — so you and your child can get the most out of every conversation.</p>
+  </section>
+
+  <!-- ANNOTATED PHONE -->
+  <section class="annotated-section">
+    <div class="annotated-inner">
+      <h2 class="section-title">The App at a Glance</h2>
+      <p class="section-subtitle">Tap anywhere in the app to see what each element does.</p>
+
+      <div class="phone-annotated">
+
+        <!-- LEFT CALLOUTS -->
+        <div class="callouts-left">
+
+          <div class="callout">
+            <div class="callout-number">1</div>
+            <h4>Response Mode</h4>
+            <p><strong>Short Response</strong> gives a quick one-sentence reply — great for fast conversations. <strong>Long Response</strong> gives a warmer two-sentence answer that includes a follow-up or personal touch.</p>
+            <div class="callout-arrow">→</div>
+          </div>
+
+          <div class="callout green">
+            <div class="callout-number">2</div>
+            <h4>Language Selector</h4>
+            <p>Tap to cycle through <strong>English, Spanish, French and Hindi</strong>. Both the question and the response will be handled in the chosen language — perfect for multilingual families.</p>
+            <div class="callout-arrow">→</div>
+          </div>
+
+          <div class="callout navy">
+            <div class="callout-number">3</div>
+            <h4>Audio Clip Duration</h4>
+            <p>Sets how long XpressAble listens before automatically stopping. Choose <strong>5, 10 or 15 seconds</strong> depending on how long questions tend to be in your child's environment.</p>
+            <div class="callout-arrow">→</div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-number">4</div>
+            <h4>Tap to Listen</h4>
+            <p>The main button. Tap once to <strong>start listening</strong>, tap again to <strong>stop early</strong>. The button changes colour to show what's happening — blue (ready), orange (listening), purple (thinking), green (speaking).</p>
+            <div class="callout-arrow">→</div>
+          </div>
+
+        </div>
+
+        <!-- PHONE MOCKUP -->
+        <div class="phone-wrap">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+
+              <!-- Logo -->
+              <div>
+                <div class="p-logo">Xpress<span>Able</span></div>
+                <div class="p-tagline">Every Voice can take Flight</div>
+              </div>
+
+              <!-- Pills -->
+              <div class="p-pills">
+                <div class="p-pill">Short Response</div>
+                <div class="p-pill">English</div>
+                <div class="p-pill">10 sec</div>
+              </div>
+
+              <!-- Main button -->
+              <div class="p-button">Tap to<br/>Listen</div>
+
+              <!-- Question box -->
+              <div class="p-box">
+                <div class="p-box-label">Question:</div>
+                <div class="p-box-text">How are you feeling today?</div>
+              </div>
+
+              <!-- Reply box -->
+              <div class="p-box">
+                <div class="p-reply-header">
+                  <div class="p-box-label">Reply:</div>
+                  <div class="p-replay">🔊 Replay</div>
+                </div>
+                <div class="p-box-text">I am feeling good today!</div>
+              </div>
+
+              <!-- Bottom buttons -->
+              <div class="p-bottom">
+                <div class="p-bottom-btn">📋 Chat History</div>
+                <div class="p-bottom-btn">👤 Profile</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CALLOUTS -->
+        <div class="callouts-right">
+
+          <div class="callout green" style="margin-top: 60px;">
+            <div class="callout-number">5</div>
+            <h4>Question Display</h4>
+            <p>Shows exactly what was heard and transcribed. This lets the caregiver <strong>verify the question was understood correctly</strong> before the response is spoken — especially useful in noisy environments.</p>
+            <div class="callout-arrow" style="text-align:left;">←</div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-number">6</div>
+            <h4>AI Response + Replay</h4>
+            <p>The generated response is shown here and spoken aloud automatically. Tap <strong>🔊 Replay</strong> at any time to hear it again — useful if the child missed it or wants to say it a second time.</p>
+            <div class="callout-arrow" style="text-align:left;">←</div>
+          </div>
+
+          <div class="callout navy">
+            <div class="callout-number">7</div>
+            <h4>Chat History</h4>
+            <p>View all past exchanges. Rate responses 👍 or 👎, add notes, and suggest better alternatives. <strong>The AI learns from your feedback</strong> and improves responses for your child over time.</p>
+            <div class="callout-arrow" style="text-align:left;">←</div>
+          </div>
+
+          <div class="callout green">
+            <div class="callout-number">8</div>
+            <h4>Profile</h4>
+            <p>Set your child's name, age, interests, favourite things, and communication style. <strong>The more detail you add, the more personal every response becomes</strong> — responses that sound like your child, not a robot.</p>
+            <div class="callout-arrow" style="text-align:left;">←</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE DEEP DIVES -->
+  <section class="features-detail">
+    <h2 class="section-title">Every Feature, in Depth</h2>
+    <p class="section-subtitle" style="margin-bottom: 56px;">Everything you need to know to get the most out of XpressAble.</p>
+
+    <!-- Feature 1 -->
+    <div class="feature-row">
+      <div class="feature-icon-large">🎙️</div>
+      <div class="feature-detail-content">
+        <h3>Instant Speech Recognition</h3>
+        <p>XpressAble uses <strong>OpenAI Whisper</strong> — one of the most accurate speech recognition systems available — to transcribe questions in real time. It handles accents, background noise, and natural speech patterns remarkably well.</p>
+        <p>You can set the listening duration to 5, 10 or 15 seconds depending on how long questions typically are in your child's environment. XpressAble also lets you stop early by tapping the button again.</p>
+        <span class="feature-tag">Fast transcription</span>
+        <span class="feature-tag">Works in noisy rooms</span>
+        <span class="feature-tag green">Accent friendly</span>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-row reverse">
+      <div class="feature-icon-large">🤖</div>
+      <div class="feature-detail-content">
+        <h3>Two Response Modes</h3>
+        <p><strong>Short Response</strong> keeps it to one sentence — ideal for quick back-and-forth conversations, classroom settings, or children who prefer minimal output. It uses a "sentence starter" technique for personal questions: instead of guessing, it gives the child a prompt like "I am feeling…?" which they can complete themselves.</p>
+        <p><strong>Long Response</strong> gives a warmer two-sentence reply — answering the question first, then adding something natural like "How are you?" or a personal interest connection. Great for social conversations where a fuller answer feels more natural.</p>
+        <span class="feature-tag">Short — 1 sentence</span>
+        <span class="feature-tag green">Long — 2 sentences</span>
+        <span class="feature-tag">Sentence starters</span>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-row">
+      <div class="feature-icon-large">🎧</div>
+      <div class="feature-detail-content">
+        <h3>Spoken Aloud Through Headphones</h3>
+        <p>Every response is spoken clearly through the child's headphones — only they hear it. This creates a <strong>private, discreet experience</strong> that doesn't draw attention or create awkwardness in social settings.</p>
+        <p>XpressAble works especially well with <strong>bone-conduction headphones</strong> like Shokz OpenRun, which sit outside the ears and allow the child to remain fully aware of their surroundings while still hearing the response clearly.</p>
+        <p>The 🔊 Replay button lets the child hear the response again at any time without re-recording.</p>
+        <span class="feature-tag">Private audio</span>
+        <span class="feature-tag green">Shokz OpenRun compatible</span>
+        <span class="feature-tag">Replay anytime</span>
+      </div>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="feature-row reverse">
+      <div class="feature-icon-large">👤</div>
+      <div class="feature-detail-content">
+        <h3>Personalised Child Profile</h3>
+        <p>The Profile screen lets you enter your child's name, age, interests, favourite things, special skills, topics to avoid, and communication style preferences. This information is stored securely on your device only and <strong>never shared or transmitted</strong>.</p>
+        <p>The AI uses every detail to personalise responses. A child who loves music might get a response like "I am feeling great — I was thinking about music all morning!" rather than a generic answer.</p>
+        <p>You can choose between <strong>Short & Simple</strong> or <strong>Warm & Chatty</strong> response styles, and set an attention span level (short, medium, long) to control how complex the language is.</p>
+        <span class="feature-tag">Stored on device only</span>
+        <span class="feature-tag green">Personalised responses</span>
+        <span class="feature-tag">Adjustable style</span>
+      </div>
+    </div>
+
+    <!-- Feature 5 -->
+    <div class="feature-row">
+      <div class="feature-icon-large">🌍</div>
+      <div class="feature-detail-content">
+        <h3>Multi-Language Support</h3>
+        <p>XpressAble supports <strong>English, Spanish, French and Hindi</strong> — with more languages planned. Both the incoming question and the outgoing response are handled in the selected language.</p>
+        <p>Switch languages instantly by tapping the language pill at the top of the screen. Perfect for multilingual families, bilingual classrooms, or children learning a second language.</p>
+        <span class="feature-tag">English</span>
+        <span class="feature-tag">Español</span>
+        <span class="feature-tag green">Français</span>
+        <span class="feature-tag">हिंदी</span>
+      </div>
+    </div>
+
+    <!-- Feature 6 -->
+    <div class="feature-row reverse">
+      <div class="feature-icon-large">📋</div>
+      <div class="feature-detail-content">
+        <h3>Chat History & Feedback Loop</h3>
+        <p>Every exchange is saved to Chat History — you can review all past questions and responses at any time. This is useful for spotting patterns, sharing with therapists, or just reflecting on your child's conversations.</p>
+        <p>For each exchange you can rate it <strong>👍 Good</strong> or <strong>👎 Needs work</strong>, add a note, and suggest a better response. This feedback is used directly to improve how XpressAble responds to your child over time — creating a personalised feedback loop that gets smarter with every conversation.</p>
+        <span class="feature-tag">Full conversation log</span>
+        <span class="feature-tag green">Rate responses</span>
+        <span class="feature-tag">AI learns over time</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Try XpressAble?</h2>
+    <p>Join families already using XpressAble to help their children find their voice. Free during beta.</p>
+    <a href="https://testflight.apple.com/join/SKpZQD96" class="btn-white" target="_blank">Join the Beta on TestFlight</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Xpress<span>Able</span></div>
+    <p>Every Voice can take Flight</p>
+    <br/>
+    <p>
+      <a href="/">Home</a> &nbsp;|&nbsp;
+      <a href="about.html">About</a> &nbsp;|&nbsp;
+      <a href="for-therapists.html">For Therapists</a> &nbsp;|&nbsp;
+      <a href="blog.html">Blog</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+    <br/>
+    <p>Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a></p>
+    <br/>
+    <p style="font-size:12px; opacity:0.6;">
+      &copy; 2026 XpressAble. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
