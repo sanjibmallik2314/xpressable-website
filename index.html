@@ -338,19 +338,19 @@
       line-height: 1.7;
     }
 
-    /* BETA */
-    .beta {
+    /* DOWNLOAD */
+    .download-cta {
       padding: 70px 24px;
       text-align: center;
       background: linear-gradient(135deg, #1A237E 0%, #2E74B5 100%);
       color: #FFFFFF;
     }
-    .beta h2 {
+    .download-cta h2 {
       font-size: 36px;
       font-weight: 800;
       margin-bottom: 12px;
     }
-    .beta p {
+    .download-cta p {
       font-size: 18px;
       opacity: 0.85;
       margin-bottom: 36px;
@@ -358,24 +358,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .beta-steps {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-    .beta-step {
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 16px 24px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .beta-step span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 6px;
+    .app-store-badge {
+      height: 56px;
+      width: auto;
     }
     .btn-white {
       background: #FFFFFF;
@@ -410,7 +395,7 @@
     @media (max-width: 600px) {
       .hero h1 { font-size: 36px; }
       nav { padding: 14px 20px; }
-      .beta h2 { font-size: 26px; }
+      .download-cta h2 { font-size: 26px; }
     }
   </style>
 </head>
@@ -424,13 +409,13 @@
       <a href="for-therapists.html" class="nav-link">For Therapists</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="#demo" class="nav-demo">Demo</a>
-      <a href="https://testflight.apple.com/join/SKpZQD96" class="nav-cta" target="_blank">Join Beta</a>
+      <a href="https://apps.apple.com/us/app/xpressable/id6783457798" class="nav-cta" target="_blank">Download App</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">NOW IN BETA</div>
+    <div class="hero-badge">NOW AVAILABLE</div>
     <h1>Xpress<span>Able</span></h1>
     <p class="hero-tagline">Every Voice can take Flight</p>
     <p class="hero-description">
@@ -438,8 +423,8 @@
       naturally and confidently — a gentle nudge, not a replacement for their voice.
     </p>
     <div class="hero-buttons">
-      <a href="https://testflight.apple.com/join/SKpZQD96" class="btn-primary" target="_blank">
-        Join the Beta — iOS
+      <a href="https://apps.apple.com/us/app/xpressable/id6783457798" class="btn-primary" target="_blank">
+        Download on the App Store
       </a>
       <a href="mailto:malliksanjibk@gmail.com" class="btn-secondary">
         Contact Us
@@ -555,30 +540,13 @@
     </div>
   </section>
 
-  <!-- BETA CTA -->
-  <section class="beta">
-    <h2>Join the Beta</h2>
-    <p>Be among the first families to experience XpressAble. Free during beta — your feedback shapes the future of the app.</p>
-    <div class="beta-steps">
-      <div class="beta-step">
-        <span>1</span>
-        Install TestFlight
-      </div>
-      <div class="beta-step">
-        <span>2</span>
-        Tap Join Beta below
-      </div>
-      <div class="beta-step">
-        <span>3</span>
-        Install XpressAble
-      </div>
-      <div class="beta-step">
-        <span>4</span>
-        Share your feedback
-      </div>
-    </div>
-    <a href="https://testflight.apple.com/join/SKpZQD96" class="btn-white" target="_blank">
-      Join the Beta on TestFlight
+  <!-- DOWNLOAD CTA -->
+  <section class="download-cta">
+    <h2>Download XpressAble</h2>
+    <p>Join families already using XpressAble to help their children find their voice. Free to download.</p>
+    <a href="https://apps.apple.com/us/app/xpressable/id6783457798" target="_blank">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+           alt="Download on the App Store" class="app-store-badge">
     </a>
   </section>
 
@@ -599,7 +567,7 @@
     <br/>
     <p style="font-size:12px; opacity:0.6;">
       &copy; 2026 XpressAble. All rights reserved. &nbsp;|&nbsp;
-      Available on iOS via TestFlight
+      Available now on the App Store
     </p>
   </footer>
 
