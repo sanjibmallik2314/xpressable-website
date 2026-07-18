@@ -36,9 +36,8 @@ const SOURCE_FILE = 'features.html'; // the English source page
 const LANGUAGES = [
   { code: 'en', name: 'English', native: 'English', file: 'features.html' },
   // { code: 'es', name: 'Spanish', native: 'Español', file: 'features-es.html' },
-  // { code: 'hi', name: 'Hindi',   native: 'हिन्दी',   file: 'features-hi.html' },
+  { code: 'hi', name: 'Hindi',   native: 'हिन्दी',   file: 'features-hi.html' },
 ];
-
 function buildSwitcherBlock(currentCode) {
   const options = LANGUAGES.map((l) =>
     `        <option value="${l.file}"${l.code === currentCode ? ' selected' : ''}>${l.native}</option>`
