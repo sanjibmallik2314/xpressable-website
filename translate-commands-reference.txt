@@ -1,0 +1,32 @@
+# Translate commands — one per language
+
+Copy-paste the line for whichever language you're activating. Remember to
+first uncomment that language's line in scripts/translate-feature-page.js's
+LANGUAGES array before running its command below, or the script will stop
+and remind you to do that.
+
+Run these from inside C:\Dev\xpressable-website
+
+## Already done
+node scripts/translate-feature-page.js es Spanish Español
+node scripts/translate-feature-page.js hi Hindi हिन्दी
+
+## Ready to run once uncommented
+node scripts/translate-feature-page.js pt Portuguese Português
+node scripts/translate-feature-page.js fr French Français
+node scripts/translate-feature-page.js de German Deutsch
+node scripts/translate-feature-page.js bn Bengali বাংলা
+node scripts/translate-feature-page.js ur Urdu اردو
+node scripts/translate-feature-page.js ar Arabic العربية
+node scripts/translate-feature-page.js gu Gujarati ગુજરાતી
+node scripts/translate-feature-page.js ta Tamil தமிழ்
+node scripts/translate-feature-page.js te Telugu తెలుగు
+node scripts/translate-feature-page.js ml Malayalam മലയാളം
+node scripts/translate-feature-page.js kn Kannada ಕನ್ನಡ
+node scripts/translate-feature-page.js ja Japanese 日本語
+node scripts/translate-feature-page.js ko Korean 한국어
+node scripts/translate-feature-page.js zh Chinese 中文
+
+## After each one
+1. Open the new features-XX.html in a browser, check it looks right
+2. git status / git add . / git commit -m "Add <language> translation" / git push origin main

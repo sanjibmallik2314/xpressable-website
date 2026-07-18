@@ -376,6 +376,15 @@
       .hero h1 { font-size: 30px; }
     }
 
+    .lang-switcher-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-switcher-icon {
+      font-size: 15px;
+      cursor: default;
+    }
     .lang-switcher {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 13px;
@@ -390,7 +399,7 @@
       -moz-appearance: none;
       appearance: none;
     }
-    @media (max-width: 700px) { .lang-switcher { display: none; } }
+    @media (max-width: 700px) { .lang-switcher-wrap { display: none; } }
   </style>
 </head>
 <body>
@@ -405,10 +414,14 @@
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="index.html#demo" class="nav-link">Demo</a>
       <!-- LANG-SWITCHER-START -->
-      <select class="lang-switcher" onchange="if(this.value) window.location.href=this.value;">
-        <option value="features.html" selected>English</option>
-        <option value="features-hi.html">हिन्दी</option>
-      </select>
+      <div class="lang-switcher-wrap" title="Change language">
+        <span class="lang-switcher-icon" aria-hidden="true">🌐</span>
+        <select class="lang-switcher" onchange="if(this.value) window.location.href=this.value;" aria-label="Change language">
+          <option value="features.html" selected>English</option>
+          <option value="features-es.html">Español</option>
+          <option value="features-hi.html">हिन्दी</option>
+        </select>
+      </div>
       <!-- LANG-SWITCHER-END -->
       <a href="https://apps.apple.com/us/app/xpressable/id6783457798" class="nav-cta" target="_blank">Download App</a>
     </div>

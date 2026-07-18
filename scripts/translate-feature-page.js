@@ -34,19 +34,37 @@ const SOURCE_FILE = 'features.html'; // the English source page
  * The 'en' entry should always stay first and always exist.
  */
 const LANGUAGES = [
-  { code: 'en', name: 'English', native: 'English', file: 'features.html' },
-  // { code: 'es', name: 'Spanish', native: 'Español', file: 'features-es.html' },
-  { code: 'hi', name: 'Hindi',   native: 'हिन्दी',   file: 'features-hi.html' },
+  { code: 'en', name: 'English',    native: 'English',    file: 'features.html' },
+  { code: 'es', name: 'Spanish',    native: 'Español',    file: 'features-es.html' },
+  { code: 'hi', name: 'Hindi',      native: 'हिन्दी',      file: 'features-hi.html' },
+  // { code: 'pt', name: 'Portuguese', native: 'Português',  file: 'features-pt.html' },
+  // { code: 'fr', name: 'French',     native: 'Français',   file: 'features-fr.html' },
+  // { code: 'de', name: 'German',     native: 'Deutsch',    file: 'features-de.html' },
+  // { code: 'bn', name: 'Bengali',    native: 'বাংলা',       file: 'features-bn.html' },
+  // { code: 'ur', name: 'Urdu',       native: 'اردو',        file: 'features-ur.html' },
+  // { code: 'ar', name: 'Arabic',     native: 'العربية',     file: 'features-ar.html' },
+  // { code: 'gu', name: 'Gujarati',   native: 'ગુજરાતી',     file: 'features-gu.html' },
+  // { code: 'ta', name: 'Tamil',      native: 'தமிழ்',       file: 'features-ta.html' },
+  // { code: 'te', name: 'Telugu',     native: 'తెలుగు',      file: 'features-te.html' },
+  // { code: 'ml', name: 'Malayalam',  native: 'മലയാളം',     file: 'features-ml.html' },
+  // { code: 'kn', name: 'Kannada',    native: 'ಕನ್ನಡ',       file: 'features-kn.html' },
+  // { code: 'ja', name: 'Japanese',   native: '日本語',       file: 'features-ja.html' },
+  // { code: 'ko', name: 'Korean',     native: '한국어',       file: 'features-ko.html' },
+  // { code: 'zh', name: 'Chinese',    native: '中文',         file: 'features-zh.html' },
 ];
+
 function buildSwitcherBlock(currentCode) {
   const options = LANGUAGES.map((l) =>
-    `        <option value="${l.file}"${l.code === currentCode ? ' selected' : ''}>${l.native}</option>`
+    `          <option value="${l.file}"${l.code === currentCode ? ' selected' : ''}>${l.native}</option>`
   ).join('\n');
   return [
     '      <!-- LANG-SWITCHER-START -->',
-    '      <select class="lang-switcher" onchange="if(this.value) window.location.href=this.value;">',
+    '      <div class="lang-switcher-wrap" title="Change language">',
+    '        <span class="lang-switcher-icon" aria-hidden="true">🌐</span>',
+    '        <select class="lang-switcher" onchange="if(this.value) window.location.href=this.value;" aria-label="Change language">',
     options,
-    '      </select>',
+    '        </select>',
+    '      </div>',
     '      <!-- LANG-SWITCHER-END -->',
   ].join('\n');
 }
