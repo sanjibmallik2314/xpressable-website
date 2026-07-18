@@ -6,7 +6,6 @@
   <title>Features — XpressAble</title>
   <meta name="description" content="Explore every feature of XpressAble — the AI communication assistant for children with autism and speech challenges." />
   <link rel="canonical" href="https://xpressable.app/features.html" />
-  <link rel="canonical" href="https://xpressable.app/features.html" />
 
 <meta property="og:title" content="Features — XpressAble" />
 <meta property="og:description" content="Explore every feature of XpressAble — the AI communication assistant for children with autism and speech challenges." />
@@ -272,6 +271,26 @@
       text-align: center;
     }
 
+    /* Mode toggle row (phone mockup) */
+    .p-mode-row {
+      display: flex;
+      gap: 5px;
+      width: 100%;
+    }
+    .p-mode-btn {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1.5px solid #CCCCCC;
+      border-radius: 9999px;
+      padding: 3px 4px;
+      font-size: 7.5px;
+      font-weight: 600;
+      color: #999;
+      text-align: center;
+    }
+    .p-mode-btn.active-manual { background: #2E74B5; border-color: #2E74B5; color: #FFFFFF; }
+    .p-mode-btn.active-auto { background: #27AE60; border-color: #27AE60; color: #FFFFFF; }
+
     /* FEATURE DEEP DIVES */
     .features-detail {
       padding: 70px 24px;
@@ -356,6 +375,22 @@
       .callout-arrow { display: none; }
       .hero h1 { font-size: 30px; }
     }
+
+    .lang-switcher {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A237E;
+      background: #FFFFFF;
+      border: 1.5px solid #2E74B5;
+      border-radius: 9999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    @media (max-width: 700px) { .lang-switcher { display: none; } }
   </style>
 </head>
 <body>
@@ -369,6 +404,11 @@
       <a href="for-therapists.html" class="nav-link">For Therapists</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="index.html#demo" class="nav-link">Demo</a>
+      <!-- LANG-SWITCHER-START -->
+      <select class="lang-switcher" onchange="if(this.value) window.location.href=this.value;">
+        <option value="features.html" selected>English</option>
+      </select>
+      <!-- LANG-SWITCHER-END -->
       <a href="https://apps.apple.com/us/app/xpressable/id6783457798" class="nav-cta" target="_blank">Download App</a>
     </div>
   </nav>
@@ -401,7 +441,7 @@
           <div class="callout green">
             <div class="callout-number">2</div>
             <h4>Language Selector</h4>
-            <p>Tap to cycle through <strong>English, Spanish, French and Hindi</strong>. Both the question and the response will be handled in the chosen language — perfect for multilingual families.</p>
+            <p>Tap to open a picker with <strong>17 languages</strong> — including Spanish, Hindi, Arabic, Tamil, Japanese and more. Both the question and the response are handled in the chosen language — perfect for multilingual families.</p>
             <div class="callout-arrow">→</div>
           </div>
 
@@ -414,8 +454,8 @@
 
           <div class="callout">
             <div class="callout-number">4</div>
-            <h4>Tap to Listen</h4>
-            <p>The main button. Tap once to <strong>start listening</strong>, tap again to <strong>stop early</strong>. The button changes colour to show what's happening — blue (ready), orange (listening), purple (thinking), green (speaking).</p>
+            <h4>Manual or Auto Mode</h4>
+            <p>Choose <strong>Manual</strong> — tap the main button once to start listening, tap again to stop early — or switch to <strong>Auto</strong> for fully hands-free listening, where XpressAble responds the moment your child says a trigger word or their own name. The button changes colour to show what's happening — blue (ready), orange (listening), purple (thinking), green (speaking).</p>
             <div class="callout-arrow">→</div>
           </div>
 
@@ -437,6 +477,12 @@
                 <div class="p-pill">Short Response</div>
                 <div class="p-pill">English</div>
                 <div class="p-pill">10 sec</div>
+              </div>
+
+              <!-- Mode toggle -->
+              <div class="p-mode-row">
+                <div class="p-mode-btn active-manual">✋ Manual</div>
+                <div class="p-mode-btn">🎙 Auto</div>
               </div>
 
               <!-- Main button -->
@@ -522,8 +568,22 @@
       </div>
     </div>
 
-    <!-- Feature 2 -->
+    <!-- Feature: Manual or Auto -->
     <div class="feature-row reverse">
+      <div class="feature-icon-large">🤝</div>
+      <div class="feature-detail-content">
+        <h3>Manual or Hands-Free Auto Mode</h3>
+        <p><strong>Manual Mode</strong> puts your child in control — tap the button, ask or answer a question, and get an instant spoken reply. Perfect for focused, one-at-a-time conversations.</p>
+        <p><strong>Auto Mode</strong> is fully hands-free. XpressAble listens quietly in the background and starts recording the moment it hears your child's name or a custom trigger word — no tapping needed. Great for kids who find reaching for a button difficult, or for a more natural, ambient conversation flow.</p>
+        <p>Trigger words are fully customisable in your child's Profile, and can be set in any language.</p>
+        <span class="feature-tag">Tap-to-talk</span>
+        <span class="feature-tag green">Hands-free listening</span>
+        <span class="feature-tag">Custom trigger words</span>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-row">
       <div class="feature-icon-large">🤖</div>
       <div class="feature-detail-content">
         <h3>Two Response Modes</h3>
@@ -536,7 +596,7 @@
     </div>
 
     <!-- Feature 3 -->
-    <div class="feature-row">
+    <div class="feature-row reverse">
       <div class="feature-icon-large">🎧</div>
       <div class="feature-detail-content">
         <h3>Spoken Aloud Through Headphones</h3>
@@ -550,7 +610,7 @@
     </div>
 
     <!-- Feature 4 -->
-    <div class="feature-row reverse">
+    <div class="feature-row">
       <div class="feature-icon-large">👤</div>
       <div class="feature-detail-content">
         <h3>Personalised Child Profile</h3>
@@ -564,21 +624,25 @@
     </div>
 
     <!-- Feature 5 -->
-    <div class="feature-row">
+    <div class="feature-row reverse">
       <div class="feature-icon-large">🌍</div>
       <div class="feature-detail-content">
-        <h3>Multi-Language Support</h3>
-        <p>XpressAble supports <strong>English, Spanish, French and Hindi</strong> — with more languages planned. Both the incoming question and the outgoing response are handled in the selected language.</p>
+        <h3>Speaks 17 Languages</h3>
+        <p>XpressAble understands and speaks back in <strong>17 languages</strong>: English, Spanish, Portuguese, French, German, Hindi, Bengali, Urdu, Arabic, Gujarati, Tamil, Telugu, Malayalam, Kannada, Japanese, Korean, and Chinese. Both the incoming question and the outgoing response are handled in the selected language.</p>
         <p>Switch languages instantly by tapping the language pill at the top of the screen. Perfect for multilingual families, bilingual classrooms, or children learning a second language.</p>
         <span class="feature-tag">English</span>
         <span class="feature-tag">Español</span>
         <span class="feature-tag green">Français</span>
-        <span class="feature-tag">हिंदी</span>
+        <span class="feature-tag">हिन्दी</span>
+        <span class="feature-tag green">العربية</span>
+        <span class="feature-tag">日本語</span>
+        <span class="feature-tag green">தமிழ்</span>
+        <span class="feature-tag">+10 more</span>
       </div>
     </div>
 
     <!-- Feature 6 -->
-    <div class="feature-row reverse">
+    <div class="feature-row">
       <div class="feature-icon-large">📋</div>
       <div class="feature-detail-content">
         <h3>Chat History & Feedback Loop</h3>
