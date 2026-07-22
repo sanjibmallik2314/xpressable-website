@@ -117,6 +117,13 @@
       transition: background 0.15s, color 0.15s;
     }
     .pill.active { background: #2E74B5; color: #fff; }
+    .lang-select {
+      -webkit-appearance: none;
+      appearance: none;
+      text-align: center;
+      text-align-last: center;
+      font-family: 'Inter', sans-serif;
+    }
 
     /* ── MODE TOGGLE ── */
     .mode-row { display: flex; gap: 6px; width: 65%; }
@@ -237,6 +244,21 @@
     }
     .send-btn:disabled { opacity: 0.5; cursor: default; }
 
+    /* ── SAMPLE CHIPS ── */
+    .sample-chip {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef2ff;
+      border: 1px solid #cdd8f7;
+      color: #1a2e6e;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .sample-chip:hover { background: #dde6ff; }
+
     /* ── STATUS ── */
     .status-hint {
       font-size: 10px;
@@ -343,7 +365,7 @@
 
       <div class="top-pills">
         <div class="pill active" id="modepill" onclick="toggleMode()">Short response</div>
-        <div class="pill" id="langpill" onclick="cycleLang()">English</div>
+        <select class="pill lang-select" id="langpill" onchange="onLangChange()"></select>
         <div class="pill" id="durpill" onclick="cycleDur()">Audio 3s</div>
       </div>
 
@@ -357,7 +379,8 @@
       </button>
 
       <div class="type-input-wrap" id="typeWrap">
-        <input class="type-input" id="typeInput"
+        <div id="sampleChips" style="display:flex; flex-wrap:wrap; gap:5px;"></div>
+        <input class="type-input" id="typeInput" dir="auto"
                placeholder='e.g. "How are you feeling today?"'
                maxlength="150" />
         <button class="send-btn" id="sendBtn" onclick="submitQuestion()">Send ↗</button>
@@ -396,8 +419,9 @@
   <script>
     const BACKEND = 'https://speechhelperbackend-production.up.railway.app';
 
-    const LANGS      = ['English','Spanish','French','Hindi'];
-    const LANG_CODES = ['en','es','fr','hi'];
+    const LANGS      = ['English','Tamil','Telugu','Kannada','Malayalam','Hindi','Bengali','Gujarati','Urdu','Arabic','Spanish','Portuguese','French','German','Japanese','Korean','Chinese'];
+    const LANG_CODES = ['en','ta-IN','te-IN','kn-IN','ml-IN','hi','bn','gu','ur','ar','es','pt','fr','de','ja','ko','zh'];
+    const RTL_CODES  = ['ur','ar'];
     const DURS       = ['3s','6s','9s'];
 
     let langIdx = 0, durIdx = 0;
@@ -406,6 +430,60 @@
     let phase        = 'idle';
     let lastReply    = '';
     let history      = [];
+
+    // Sample questions per language, keyed by base language code (region suffix stripped).
+    // NOTE: every non-English line here is a first draft, not a professional translation —
+    // have a native speaker review wording before relying on these in front of a real audience,
+    // especially the non-Latin scripts (ta/te/kn/ml/hi/bn/gu/ur/ar/ja/ko/zh).
+    const SAMPLES = {
+      en: ['How are you feeling today?', 'What do you want for lunch?', 'Do you want to play outside?'],
+      ta: ['இன்று நீ எப்படி உணர்கிறாய்?', 'மதிய உணவுக்கு என்ன வேண்டும்?', 'வெளியே விளையாட வேண்டுமா?'],
+      te: ['ఈరోజు నీ మనసు ఎలా ఉంది?', 'మధ్యాహ్న భోజనానికి ఏమి కావాలి?', 'బయట ఆడాలనుకుంటున్నావా?'],
+      kn: ['ಇಂದು ನಿನ್ನ ಮನಸ್ಸು ಹೇಗಿದೆ?', 'ಮಧ್ಯಾಹ್ನದ ಊಟಕ್ಕೆ ಏನು ಬೇಕು?', 'ಹೊರಗೆ ಆಡಬೇಕೆ?'],
+      ml: ['ഇന്ന് നിനക്ക് എങ്ങനെ തോന്നുന്നു?', 'ഉച്ചഭക്ഷണത്തിന് എന്ത് വേണം?', 'പുറത്ത് കളിക്കണോ?'],
+      hi: ['आज तुम कैसा महसूस कर रहे हो?', 'दोपहर के खाने में क्या चाहिए?', 'क्या तुम बाहर खेलना चाहते हो?'],
+      bn: ['তুমি আজ কেমন অনুভব করছ?', 'দুপুরের খাবারে কী চাও?', 'তুমি কি বাইরে খেলতে চাও?'],
+      gu: ['તું આજે કેવું અનુભવે છે?', 'બપોરના જમવામાં શું જોઈએ છે?', 'શું તું બહાર રમવા માંગે છે?'],
+      ur: ['آج تم کیسا محسوس کر رہے ہو؟', 'دوپہر کے کھانے میں کیا چاہیے؟', 'کیا تم باہر کھیلنا چاہتے ہو؟'],
+      ar: ['كيف تشعر اليوم؟', 'ماذا تريد لتناول الغداء؟', 'هل تريد اللعب في الخارج؟'],
+      es: ['¿Cómo te sientes hoy?', '¿Qué quieres para el almuerzo?', '¿Quieres jugar afuera?'],
+      pt: ['Como você está se sentindo hoje?', 'O que você quer para o almoço?', 'Você quer brincar lá fora?'],
+      fr: ['Comment te sens-tu aujourd\u2019hui\u00a0?', 'Que veux-tu pour le d\u00e9jeuner\u00a0?', 'Veux-tu jouer dehors\u00a0?'],
+      de: ['Wie f\u00fchlst du dich heute?', 'Was m\u00f6chtest du zum Mittagessen?', 'M\u00f6chtest du drau\u00dfen spielen?'],
+      ja: ['\u4eca\u65e5\u306e\u6c17\u5206\u306f\u3069\u3046\uff1f', '\u304a\u6607\u3054\u306f\u3093\u306f\u4f55\u304c\u98df\u3079\u305f\u3044\uff1f', '\u5916\u3067\u9045\u3073\u305f\u3044\uff1f'],
+      ko: ['\uc624\ub298 \uae30\ubd84\uc774 \uc5b4\ub54c?', '\uc810\uc2ec\uc73c\ub85c \ubb50 \uba39\uace0 \uc2f6\uc5b4?', '\ubc16\uc5d0\uc11c \ub180\uace0 \uc2f6\uc5b4?'],
+      zh: ['\u4f60\u4eca\u5929\u611f\u89c9\u600e\u4e48\u6837\uff1f', '\u4f60\u5348\u996d\u60f3\u5403\u4ec0\u4e48\uff1f', '\u4f60\u60f3\u51fa\u53bb\u73a9\u5417\uff1f']
+    };
+
+    function isRTL(code) { return RTL_CODES.indexOf(code.split('-')[0]) !== -1; }
+
+    function populateLangSelect() {
+      const sel = document.getElementById('langpill');
+      sel.innerHTML = LANGS.map((l, i) => `<option value="${i}">${l}</option>`).join('');
+    }
+
+    function onLangChange() {
+      langIdx = parseInt(document.getElementById('langpill').value, 10);
+      renderSamples();
+    }
+
+    function renderSamples() {
+      const baseCode = LANG_CODES[langIdx].split('-')[0];
+      const list = SAMPLES[baseCode] || SAMPLES.en;
+      const container = document.getElementById('sampleChips');
+      const dir = isRTL(baseCode) ? 'rtl' : 'ltr';
+      container.dir = dir;
+      container.innerHTML = list.map(q =>
+        `<span class="sample-chip" dir="${dir}" onclick="useSample(this)">${q}</span>`
+      ).join('');
+    }
+
+    function useSample(el) {
+      document.getElementById('typeInput').value = el.textContent;
+      submitQuestion();
+    }
+
+    populateLangSelect();
 
     const PROMPTS = {
       quick: `You are a communication helper for a child with speech difficulties. Respond in FIRST PERSON as the child (use I, me, my) for personal questions. For factual questions, answer helpfully and neutrally. Reply in ONE short sentence, under 8 words. No greetings, no filler, no questions back. Never use emojis. Never say I don't know — always give a direct answer or a warm first-person reply. Always reply in {LANG}.`,
@@ -421,11 +499,6 @@
       const el = document.getElementById('modepill');
       el.textContent = responseMode === 'quick' ? 'Short response' : 'Long response';
       el.className   = 'pill' + (responseMode === 'detailed' ? ' active' : '');
-    }
-
-    function cycleLang() {
-      langIdx = (langIdx + 1) % LANGS.length;
-      document.getElementById('langpill').textContent = LANGS[langIdx];
     }
 
     function cycleDur() {
@@ -463,6 +536,7 @@
       phase = 'typing';
       updateBtn('Type your question\nbelow ↓', '#2E74B5', false);
       document.getElementById('typeWrap').classList.add('visible');
+      renderSamples();
       setTimeout(() => document.getElementById('typeInput').focus(), 50);
       setStatus('Type a question, then press Send.');
     }
@@ -481,12 +555,14 @@
       qBox.style.color  = '#1a1a1a';
       qBox.style.fontStyle = 'normal';
       qBox.style.fontSize  = '12px';
+      qBox.dir = isRTL(LANG_CODES[langIdx]) ? 'rtl' : 'auto';
 
       const rBox = document.getElementById('replyBox');
       rBox.textContent  = 'Thinking…';
       rBox.style.color  = '#8E44AD';
       rBox.style.fontStyle = 'italic';
       rBox.style.fontSize  = '11px';
+      rBox.dir = isRTL(LANG_CODES[langIdx]) ? 'rtl' : 'auto';
 
       phase = 'thinking';
       updateBtn('⏳ Thinking…', '#8E44AD', false);
