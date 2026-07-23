@@ -79,17 +79,46 @@ function injectSwitcher(html, currentCode) {
 }
 
 async function translate(html, targetLanguage) {
-  const response = await fetch(`${BACKEND_URL}/api/translate-page`, {
+  const startRes = await fetch(`${BACKEND_URL}/api/translate-page`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ html, targetLanguage }),
   });
-  if (!response.ok) {
-    throw new Error(await response.text());
+  if (!startRes.ok) {
+    throw new Error(await startRes.text());
   }
-  const { translatedHtml } = await response.json();
-  if (!translatedHtml) throw new Error('No translated content returned - check Railway logs.');
-  return translatedHtml;
+  const { jobId } = await startRes.json();
+  if (!jobId) throw new Error('No jobId returned - check Railway logs.');
+
+  // Poll for completion instead of holding one long request open — that
+  // was what caused the "upstream error" / "fetch failed" failures on
+  // token-hungry languages like Kannada.
+  const POLL_INTERVAL_MS = 5000;
+  const MAX_WAIT_MS = 20 * 60 * 1000; // 20 minute ceiling — server can now spend up to ~16 min (two 8-min attempts)
+  const startedAt = Date.now();
+
+  while (true) {
+    await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
+
+    if (Date.now() - startedAt > MAX_WAIT_MS) {
+      throw new Error('Timed out waiting for the translation job to complete (5 min ceiling).');
+    }
+
+    const statusRes = await fetch(`${BACKEND_URL}/api/translate-page/status/${jobId}`);
+    if (!statusRes.ok) {
+      throw new Error(await statusRes.text());
+    }
+    const job = await statusRes.json();
+
+    if (job.status === 'done') {
+      if (!job.translatedHtml) throw new Error('Job finished but returned no content - check Railway logs.');
+      return job.translatedHtml;
+    }
+    if (job.status === 'error') {
+      throw new Error(job.error || 'Translation job failed - check Railway logs.');
+    }
+    process.stdout.write('.'); // still running — show progress
+  }
 }
 
 async function main() {
