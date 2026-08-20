@@ -245,7 +245,7 @@ footer .footer-logo span { color: #2E9E6B; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">LAST UPDATED: JUNE 2026</div>
+  <div class="hero-badge">LAST UPDATED: AUGUST 2026</div>
   <h1>Privacy Policy</h1>
   <p>We built XpressAble to help children find their voice — and we take the privacy of every family seriously.</p>
   <p>This policy explains what we collect, why, and how we protect it.</p>
@@ -291,7 +291,7 @@ footer .footer-logo span { color: #2E9E6B; }
     <p>When you rate a response (👍 Good or 👎 Needs work) or add a note or better response suggestion, that information is also saved. This feedback is used directly to improve how the AI responds to questions — helping make XpressAble more useful for all families over time.</p>
 
     <p><strong>Child Profile Information</strong></p>
-    <p>If you create a profile for your child (name, age, interests), this information is stored locally on your device using encrypted storage. It is never transmitted to our servers and never shared with anyone. It is used only within the app to personalize AI responses.</p>
+    <p>If you create a profile for your child (name, age, interests), this information is stored locally on your device using encrypted storage — it is never stored on our servers. When generating a response, relevant profile details pass through our backend server in transit (not stored there) on their way to Anthropic, so the response can be personalized. This is the same proxied-in-transit handling described in the Security section below.</p>
   </div>
 
   <!-- What We Do NOT Collect -->
@@ -330,7 +330,7 @@ footer .footer-logo span { color: #2E9E6B; }
 
     <p><strong>OpenAI Whisper</strong> — processes audio recordings for speech-to-text transcription. Audio is sent to OpenAI's servers and processed in real time. OpenAI's privacy policy applies to this processing. Audio is not retained by XpressAble after transcription.</p>
 
-    <p><strong>Anthropic Claude</strong> — generates age-appropriate responses based on the transcribed question and your child's profile. The question text is sent to Anthropic's servers. Anthropic's privacy policy applies. No personal information is included in these requests.</p>
+    <p><strong>Anthropic Claude</strong> — generates responses based on the transcribed question and relevant profile details (such as interests, communication style, and topics to avoid) entered by a caregiver or therapist. This information is sent to Anthropic's servers to generate a personalized response. Anthropic's privacy policy applies to this processing.</p>
 
     <p><strong>Google Sheets</strong> — stores anonymous conversation exchanges and feedback. Data is stored under your anonymous device ID only. Google's privacy policy applies to data stored in Sheets.</p>
 
@@ -344,7 +344,7 @@ footer .footer-logo span { color: #2E9E6B; }
     <div class="green-box">
       XpressAble does not knowingly collect any personally identifiable information from children. The app does not require children to create accounts, provide names, or share any identifying information.
     </div>
-    <p>Child profile information (name, age, interests) entered by a caregiver is stored only on the device and never transmitted to our servers. Speech audio is processed in real time and is not retained.</p>
+    <p>Child profile information (name, age, interests) entered by a caregiver is stored only on the device. As described above, relevant details pass through our backend in transit — not stored — when generating a personalized response. Speech audio is processed in real time and is not retained.</p>
     <p>If you believe we have inadvertently collected personal information about a child, please contact us immediately at <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a> and we will delete it promptly.</p>
   </div>
 
