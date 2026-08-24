@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XpressAble Fund — Help a Family Access XpressAble</title>
+  <meta name="description" content="XpressAble Fund is a planned nonprofit initiative to help families who can't afford XpressAble's subscription get access at no cost. Apply for assistance or contribute to help cover costs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://xpressable.app/fund.html" />
+
+  <meta property="og:title" content="XpressAble Fund — Help a Family Access XpressAble" />
+  <meta property="og:description" content="A planned nonprofit initiative to help families who can't afford XpressAble's subscription get access at no cost." />
+  <meta property="og:url" content="https://xpressable.app/fund.html" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F8FF; color: #1A1A1A; line-height: 1.6; }
+
+    nav { background: #FFFFFF; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-size: 22px; font-weight: 700; color: #1A237E; text-decoration: none; }
+    .nav-logo span { color: #2E9E6B; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: #1A237E; font-weight: 600; font-size: 14px; text-decoration: none; }
+    .nav-link:hover { color: #2E74B5; }
+    .nav-cta { background: #2E74B5; color: #FFFFFF; padding: 10px 22px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 14px; }
+    .nav-cta:hover { background: #1A5A9A; }
+    @media (max-width: 700px) { .nav-link { display: none; } }
+
+    .page-hero { text-align: center; padding: 70px 24px 50px; max-width: 720px; margin: 0 auto; }
+    .hero-badge { display: inline-block; background: #E8F4FE; color: #2E74B5; font-size: 13px; font-weight: 600; padding: 6px 16px; border-radius: 9999px; margin-bottom: 20px; }
+    .page-hero h1 { font-size: 42px; font-weight: 800; color: #1A237E; margin-bottom: 16px; line-height: 1.2; }
+    .page-hero p { font-size: 18px; color: #555; line-height: 1.8; }
+
+    .notice { max-width: 720px; margin: 0 auto 50px; background: #FFF8E6; border: 1px solid #F5D67B; border-radius: 12px; padding: 20px 24px; font-size: 14px; color: #6B5000; line-height: 1.7; }
+    .notice strong { color: #4A3800; }
+
+    .story { background: #FFFFFF; padding: 60px 24px; }
+    .story-inner { max-width: 760px; margin: 0 auto; }
+    .story-inner h2 { font-size: 28px; font-weight: 700; color: #1A237E; margin-bottom: 16px; }
+    .story-inner p { font-size: 16px; color: #444; line-height: 1.9; margin-bottom: 20px; }
+    .story-inner p:last-child { margin-bottom: 0; }
+
+    .who { padding: 60px 24px; max-width: 960px; margin: 0 auto; }
+    .section-title { text-align: center; font-size: 32px; font-weight: 700; color: #1A237E; margin-bottom: 8px; }
+    .section-subtitle { text-align: center; color: #666; font-size: 16px; margin-bottom: 48px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .info-card { background: #FFFFFF; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .info-card-icon { font-size: 36px; margin-bottom: 14px; }
+    .info-card h3 { font-size: 18px; font-weight: 700; color: #1A237E; margin-bottom: 8px; }
+    .info-card p { font-size: 15px; color: #555; line-height: 1.7; }
+
+    .forms { background: #FFFFFF; padding: 60px 24px; }
+    .forms-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+    .form-card { background: #F5F8FF; border-radius: 16px; padding: 32px; }
+    .form-card h3 { font-size: 20px; font-weight: 700; color: #1A237E; margin-bottom: 8px; }
+    .form-card > p.sub { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.7; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 13px; font-weight: 600; color: #333; margin-bottom: 6px; }
+    .field input, .field textarea { width: 100%; padding: 11px 14px; border: 1px solid #D5DEEE; border-radius: 8px; font-size: 14px; font-family: inherit; background: #FFFFFF; }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .submit-btn { width: 100%; background: #2E74B5; color: #FFFFFF; border: none; padding: 14px; border-radius: 9999px; font-weight: 700; font-size: 15px; cursor: pointer; margin-top: 4px; }
+    .submit-btn:hover { background: #1A5A9A; }
+    .submit-btn.green { background: #2E9E6B; }
+    .submit-btn.green:hover { background: #237E56; }
+    .form-note { font-size: 12px; color: #888; margin-top: 12px; text-align: center; }
+
+    .cta { padding: 70px 24px; text-align: center; background: linear-gradient(135deg, #1A237E 0%, #2E74B5 100%); color: #FFFFFF; }
+    .cta h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+    .cta p { font-size: 18px; opacity: 0.85; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-white { background: #FFFFFF; color: #2E74B5; padding: 16px 40px; border-radius: 9999px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-block; }
+    .btn-white:hover { opacity: 0.95; }
+
+    footer { background: #1A1A1A; color: #999; text-align: center; padding: 32px 24px; font-size: 14px; }
+    footer a { color: #2E74B5; text-decoration: none; }
+    .footer-logo { font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+    .footer-logo span { color: #2E9E6B; }
+
+    @media (max-width: 600px) { .page-hero h1 { font-size: 30px; } nav { padding: 14px 20px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Xpress<span>Able</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="how-to-use.html" class="nav-link">How to Use</a>
+      <a href="for-therapists.html" class="nav-link">For Therapists</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="fund.html" class="nav-link">XpressAble Fund</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="https://apps.apple.com/us/app/xpressable/id6783457798" class="nav-cta" target="_blank">Download App</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-badge">XPRESSABLE FUND · IN THE WORKS</div>
+    <h1>No Family Should Miss Out Over Cost.</h1>
+    <p>We're exploring starting <strong>XpressAble Fund</strong>, a nonprofit initiative to help cover the subscription cost for families who can't afford it — funded by people who want to help make sure this tool reaches every child who needs it.</p>
+  </section>
+
+  <div class="notice">
+    <strong>Where this stands today:</strong> XpressAble Fund is not yet a registered nonprofit — we're gauging interest before taking on the cost and ongoing work of setting one up properly. Nothing here is tax-deductible yet, and no payments are processed on this page. If you apply or offer to help, we'll follow up directly by email.
+  </div>
+
+  <section class="story">
+    <div class="story-inner">
+      <h2>Why a Fund</h2>
+      <p>XpressAble is free to download, with a small subscription — $2.99/month or $24.99/year — to unlock full access. That price is set to cover the real, ongoing cost of the AI processing behind every conversation, not to turn a profit. But for some families, even a nominal subscription is a real barrier.</p>
+      <p>XpressAble Fund is meant to close that gap: people who want to support the mission can help cover the cost, and families who need it can apply for free access, no questions asked about why.</p>
+    </div>
+  </section>
+
+  <section class="who">
+    <h2 class="section-title">How It Would Work</h2>
+    <p class="section-subtitle">Once the Fund is set up, here's the plan.</p>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="info-card-icon">🙋</div>
+        <h3>Families Apply</h3>
+        <p>A short, private request — no proof of income or lengthy paperwork. If cost is the reason you or your child can't use XpressAble, that's reason enough to ask.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">✅</div>
+        <h3>We Grant Free Access</h3>
+        <p>Approved families get full access to XpressAble at no cost — no card required, no trial that expires.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">💙</div>
+        <h3>Supporters Help Cover It</h3>
+        <p>Contributions from people who believe in the mission fund those free accounts, so cost never has to be the reason a child goes without.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="forms">
+    <div class="forms-grid">
+      <div class="form-card">
+        <h3>Need Help Affording XpressAble?</h3>
+        <p class="sub">Let us know — we're tracking interest right now so we know how big this need really is. This opens a pre-filled email in your mail app; nothing is sent automatically.</p>
+        <form id="assistForm">
+          <div class="field">
+            <label for="a-name">Your name</label>
+            <input type="text" id="a-name" name="name" placeholder="Jordan Rivera" required />
+          </div>
+          <div class="field">
+            <label for="a-email">Email address</label>
+            <input type="email" id="a-email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="a-message">Anything you'd like us to know (optional)</label>
+            <textarea id="a-message" name="message" placeholder="We're happy to keep this brief — just enough for us to follow up."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Request Assistance</button>
+          <p class="form-note">We'll only use this to follow up about XpressAble Fund.</p>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Want to Help Cover the Cost?</h3>
+        <p class="sub">Tell us you'd like to contribute once the Fund is set up. This opens a pre-filled email in your mail app; nothing is sent automatically.</p>
+        <form id="supportForm">
+          <div class="field">
+            <label for="s-name">Your name</label>
+            <input type="text" id="s-name" name="name" placeholder="Jordan Rivera" required />
+          </div>
+          <div class="field">
+            <label for="s-email">Email address</label>
+            <input type="email" id="s-email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="s-message">Anything you'd like us to know (optional)</label>
+            <textarea id="s-message" name="message" placeholder="Let us know if you'd like to be notified once the Fund is live."></textarea>
+          </div>
+          <button type="submit" class="submit-btn green">Notify Me When It's Live</button>
+          <p class="form-note">We'll only use this to follow up about XpressAble Fund.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Have Questions About the Fund?</h2>
+    <p>Reach out directly and we'll get back to you personally.</p>
+    <a href="contact.html" class="btn-white">Contact Us</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Xpress<span>Able</span></div>
+    <p>© 2026 XpressAble. All rights reserved.</p>
+    <p style="margin-top:8px;">Questions? <a href="mailto:malliksanjibk@gmail.com">malliksanjibk@gmail.com</a></p>
+  </footer>
+
+  <script>
+    function wireMailtoForm(formId, subjectPrefix) {
+      var form = document.getElementById(formId);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.querySelector('input[name="name"]').value.trim();
+        var email = form.querySelector('input[name="email"]').value.trim();
+        var message = form.querySelector('textarea[name="message"]').value.trim();
+
+        var subject = encodeURIComponent(subjectPrefix + ' — ' + name);
+        var bodyLines = [
+          'Name: ' + name,
+          'Email: ' + email,
+          '',
+          'Message:',
+          message || '(none)'
+        ];
+        var body = encodeURIComponent(bodyLines.join('\n'));
+
+        window.location.href = 'mailto:malliksanjibk@gmail.com?subject=' + subject + '&body=' + body;
+      });
+    }
+
+    wireMailtoForm('assistForm', 'XpressAble Fund — Assistance Request');
+    wireMailtoForm('supportForm', 'XpressAble Fund — Interested Supporter');
+  </script>
+
+</body>
+</html>
